@@ -3,6 +3,7 @@
  * for Docker builds.
  */
 await import("./src/env.js");
+import { withContentlayer } from "next-contentlayer";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -11,4 +12,4 @@ const config = {
   },
 };
 
-export default config;
+export default withContentlayer(config);
