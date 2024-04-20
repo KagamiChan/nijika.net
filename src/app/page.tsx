@@ -1,6 +1,5 @@
 import { compareDesc, format, parseISO } from 'date-fns';
-import { Menu, Search } from "lucide-react";
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { Menu } from "lucide-react";
 import Link from "next/link";
 
 import { allPosts, type Post } from "contentlayer/generated";
@@ -10,7 +9,6 @@ import {
   Card,
   CardContent
 } from "~/components/ui/card";
-import { Input } from "~/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 
 import { SiteTitle } from "~/components/site-title";
@@ -26,7 +24,7 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <div className="prose text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
+      <div className="prose prose-zinc text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
     </div>
   )
 }
@@ -91,18 +89,6 @@ export default function Dashboard() {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-          <form className="ml-auto flex-1 sm:flex-initial">
-            <div className="relative">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search this site"
-                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-              />
-            </div>
-          </form>
-        </div>
       </header>
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
         <Card className="xl:col-span-2">
