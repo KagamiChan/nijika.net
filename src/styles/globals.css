@@ -80,3 +80,7 @@
 body {
   min-width: 360px;
 }
+
+html {
+  font-size: 20px;
+}

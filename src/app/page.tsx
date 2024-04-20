@@ -16,7 +16,6 @@ import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 import { SiteTitle } from "~/components/site-title";
 
 function PostCard(post: Post) {
-  const MdxContent = useMDXComponent(post.body.code)
   return (
     <div className="mb-8">
       <h2 className="mb-1 text-xl">
@@ -27,7 +26,7 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <div className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" ><MdxContent /></div>
+      <div className="prose text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
     </div>
   )
 }
@@ -38,7 +37,7 @@ export default function Dashboard() {
   );
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+      <header className="sticky z-10 top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <SiteTitle className="flex items-center gap-2 text-4xl font-semibold" />
           <Link
