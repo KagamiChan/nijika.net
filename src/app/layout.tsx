@@ -1,11 +1,6 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import '@fontsource-variable/noto-sans-sc'
 
 export const metadata = {
   title: "Atelier Nijika",
@@ -19,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+    <html lang="zh">
+      <body className="font-sans">{children}</body>
     </html>
   );
 }
