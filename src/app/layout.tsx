@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
-import '@fontsource-variable/noto-sans-sc'
+import "@fontsource-variable/noto-sans-sc";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Atelier Nijika",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh">
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
