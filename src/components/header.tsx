@@ -17,7 +17,7 @@ export const Header = () => {
           首页
         </Link>
         <Link
-          href="#"
+          href="/about"
           className="whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground"
         >
           关于
@@ -33,11 +33,11 @@ export const Header = () => {
         <SheetContent side="left">
           <nav className="grid gap-6 text-lg font-medium">
             <SiteTitle className="flex items-center gap-2 text-2xl font-semibold" />
-            <Link href="#" className="hover:text-foreground">
+            <Link href="/" className="hover:text-foreground">
               首页
             </Link>
             <Link
-              href="#"
+              href="/about"
               className="text-muted-foreground hover:text-foreground"
             >
               关于

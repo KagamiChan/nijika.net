@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
+import { allPosts } from "contentlayer/generated";
 import { Header } from "~/components/header";
-import { allPosts, type Post } from "contentlayer/generated";
 import { LocalTime } from "~/components/local-time";
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -17,7 +17,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           <LocalTime date={post.date} />
           <h1>{post.title}</h1>
           <div
-            className="prose prose-zinc [&>*:last-child]:mb-0 [&>*]:mb-3"
+            className="[&>*:last-child]:mb-0 [&>*]:mb-3"
             dangerouslySetInnerHTML={{ __html: post.body.html }}
           ></div>
         </article>

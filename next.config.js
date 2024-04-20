@@ -4,12 +4,16 @@
  */
 await import("./src/env.js");
 import { withContentlayer } from "next-contentlayer";
+import createMDX from '@next/mdx'
 
 /** @type {import("next").NextConfig} */
 const config = {
+  pageExtensions: ["tsx", "md", "mdx"],
   eslint: {
     ignoreDuringBuilds: true,
   },
 };
 
-export default withContentlayer(config);
+const withMDX = createMDX()
+
+export default withContentlayer(withMDX(config));
