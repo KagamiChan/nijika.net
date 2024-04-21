@@ -22,9 +22,11 @@ export default function AppHome() {
   );
   return (
     <CommonLayout>
-      {posts.map((post) => (
-        <PostItem key={post._id} {...post} />
-      ))}
+      <div className="flex flex-col gap-4">
+        {posts.map((post) => (
+          <PostItem key={post._id} {...post} />
+        ))}
+      </div>
     </CommonLayout>
   );
 }
