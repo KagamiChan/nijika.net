@@ -2,7 +2,7 @@ import "~/styles/globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/theme-provider";
-import { SITE_NAME } from "~/constants";
+import { SITE_NAME, SITE_URL } from "~/constants";
 import { Noto_Sans_SC } from "next/font/google";
 import { type Metadata } from "next";
 
@@ -10,7 +10,7 @@ export const metadata = {
   title: SITE_NAME,
   description: "A blog dedicated to web development and various otaku interests",
   icons: [{ rel: "icon", url: "/favicon.png" }],
-  metadataBase: new URL("https://nijika.net"),
+  metadataBase: new URL(SITE_URL),
   authors: [{ name: "かがみ" }]
 } satisfies Metadata;
 

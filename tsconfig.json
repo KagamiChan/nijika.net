@@ -39,6 +39,6 @@
     "**/*.js",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "src/app/posts/[slug]/opengraph-image.tsx"  ],
   "exclude": ["node_modules"]
 }
