@@ -12,6 +12,7 @@
   "dependencies": {
     "@expressive-code/plugin-frames": "^0.35.2",
     "@expressive-code/plugin-line-numbers": "^0.35.2",
+    "@giscus/react": "^3.0.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.2",
