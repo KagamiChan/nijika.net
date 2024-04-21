@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 import { allPosts } from "contentlayer/generated";
 import { SITE_URL } from "~/constants";
 
-export const size = {
+const size = {
   width: 1600,
   height: 900,
 };
@@ -24,7 +24,8 @@ export const generateImageMetadata = async ({
         ? `来自アトリエにじか的文章：${post.title}`
         : "来自アトリエにじか的文章",
       contentType: "image/png",
-      id: "regular",
+      id: "medium",
+      size,
     },
   ];
 };
