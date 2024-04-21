@@ -1,13 +1,16 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehypeExpressiveCode from "rehype-expressive-code";
+import { pluginFramesTexts } from "@expressive-code/plugin-frames";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
-import { pluginFramesTexts } from '@expressive-code/plugin-frames'
+import rehypeExpressiveCode, {
+  type ExpressiveCodeTheme,
+} from "rehype-expressive-code";
 
-pluginFramesTexts.addLocale('zh', {
-	terminalWindowFallbackTitle: '终端窗口',
-	copyButtonTooltip: '复制代码',
-	copyButtonCopied: '复制成功🎉',
-})
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+
+pluginFramesTexts.addLocale("zh", {
+  terminalWindowFallbackTitle: "终端窗口",
+  copyButtonTooltip: "复制代码",
+  copyButtonCopied: "复制成功🎉",
+});
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -33,6 +36,12 @@ export default makeSource({
       [
         rehypeExpressiveCode,
         {
+          customizeTheme: (theme: ExpressiveCodeTheme) => {
+            theme.name = theme.type;
+            return theme;
+          },
+          themeCssSelector: (theme: ExpressiveCodeTheme) => `.${theme.name}`,
+          useDarkModeMediaQuery: false,
           defaultLocale: "zh-CN",
           plugins: [pluginLineNumbers()],
           themes: ["dark-plus", "light-plus"],

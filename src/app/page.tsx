@@ -8,7 +8,7 @@ import { LocalTime } from "~/components/local-time";
 const PostItem = (post: Post) => {
   return (
     <div className="mb-8">
-      <div className="prose prose-zinc mb-1 text-xl">
+      <div className="prose prose-zinc dark:prose-invert mb-1 text-xl">
         <Link
           href={post.url}
         >

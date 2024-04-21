@@ -11,7 +11,7 @@ export const LocalTime = ({ date, className }: LocalTimeProps) => {
   return (
     <time
       dateTime={date}
-      className={cn(className, "mb-2 block text-xs text-gray-600")}
+      className={cn(className, "mb-2 block text-xs")}
       suppressHydrationWarning
     >
       {new Intl.DateTimeFormat("zh-CN", {
