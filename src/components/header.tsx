@@ -1,14 +1,15 @@
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import Link from "next/link";
 
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 import { Button } from "~/components/ui/button";
 import { SiteTitle } from "~/components/site-title";
 import { ThemeChooser } from "./theme-chooser";
+import { SearchLink } from "./search-link";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-6">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <SiteTitle className="flex items-center gap-2 text-4xl font-semibold" />
         <Link
@@ -28,7 +29,7 @@ export const Header = () => {
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="shrink-0 md:hidden">
             <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
+            <span className="sr-only">打开导航菜单</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
@@ -46,7 +47,8 @@ export const Header = () => {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4 justify-end">
+      <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
+        <SearchLink />
         <ThemeChooser />
       </div>
     </header>

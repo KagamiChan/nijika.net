@@ -1,20 +1,8 @@
-import { allPosts, type Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
-import Link from "next/link";
 import { CommonLayout } from "~/components/common-layout";
 
-import { LocalTime } from "~/components/local-time";
-
-const PostItem = (post: Post) => {
-  return (
-    <div role="group">
-      <div className="prose prose-zinc mb-1 text-xl dark:prose-invert">
-        <Link href={post.url}>{post.title}</Link>
-      </div>
-      <LocalTime date={post.date} />
-    </div>
-  );
-};
+import { PostItem } from "../components/post-item";
 
 export default function AppHome() {
   const posts = allPosts.sort((a, b) =>
