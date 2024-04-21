@@ -4,12 +4,15 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/theme-provider";
 import { SITE_NAME } from "~/constants";
 import { Noto_Sans_SC } from "next/font/google";
+import { type Metadata } from "next";
 
 export const metadata = {
   title: SITE_NAME,
   description: "A blog about web development and other otaku things",
   icons: [{ rel: "icon", url: "/favicon.png" }],
-};
+  metadataBase: new URL("https://nijika.net"),
+  authors: [{ name: "かがみ" }]
+} satisfies Metadata;
 
 const notoSansSC = Noto_Sans_SC({
   display: "swap",
