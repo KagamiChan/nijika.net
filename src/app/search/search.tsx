@@ -54,7 +54,7 @@ export const Search = () => {
                 <div key={item._id as string}>
                   <div className="text-sm">
                     有 {Object.keys((item as SearchResult).match).length}{" "}
-                    个匹配结果
+                    个模糊匹配结果
                   </div>
                   <PostItem {...(item as Post)} />
                 </div>

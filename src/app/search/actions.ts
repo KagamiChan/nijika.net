@@ -36,7 +36,7 @@ export const handleSearch = async (
   }
 
   const matched = miniSearch.search(formData.get("q") as string, {
-    fuzzy: 0.4,
+    fuzzy: 0.2,
   });
 
   const result = matched.map((item) => {
