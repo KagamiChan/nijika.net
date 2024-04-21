@@ -1,3 +1,5 @@
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
 import { pluginFramesTexts } from "@expressive-code/plugin-frames";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeExpressiveCode, {
@@ -33,6 +35,16 @@ export default makeSource({
   documentTypes: [Post],
   markdown: {
     rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["subheading-anchor"],
+            ariaLabel: "到本部分内容的链接",
+          },
+        },
+      ],
       [
         rehypeExpressiveCode,
         {
