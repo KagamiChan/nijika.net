@@ -8,7 +8,7 @@ import { type Metadata } from "next";
 
 export const metadata = {
   title: SITE_NAME,
-  description: "A blog about web development and other otaku things",
+  description: "A blog dedicated to web development and various otaku interests",
   icons: [{ rel: "icon", url: "/favicon.png" }],
   metadataBase: new URL("https://nijika.net"),
   authors: [{ name: "かがみ" }]
