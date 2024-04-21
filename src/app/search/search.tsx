@@ -13,7 +13,6 @@ import { Suspense } from "react";
 
 const SearchButton = () => {
   const { pending } = useFormStatus();
-  console.log(pending);
 
   return (
     <Button type="submit" disabled={pending}>
@@ -35,8 +34,6 @@ const SearchInput = () => {
 
 export const Search = () => {
   const [formState, action] = useFormState(handleSearch, { result: null });
-
-  console.log(formState.result);
 
   return (
     <div className="flex flex-col gap-8">
