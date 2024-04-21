@@ -12,7 +12,7 @@ export default function AboutLayout({
 }) {
   return (
     <CommonLayout>
-      <article className="prose prose-zinc dark:prose-invert">
+      <article className="prose prose-neutral dark:prose-invert">
         <h1>关于</h1>
         {children}
       </article>

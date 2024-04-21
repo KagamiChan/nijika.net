@@ -40,7 +40,7 @@ export default async function BlogPost({
   return (
     <CommonLayout>
       <div className="flex gap-16">
-        <article className="prose prose-zinc dark:prose-invert">
+        <article className="prose prose-neutral dark:prose-invert">
           <LocalTime date={post.date} />
           <h1>{post.title}</h1>
           <div
