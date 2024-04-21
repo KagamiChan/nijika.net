@@ -6,8 +6,19 @@ import { LocalTime } from "~/components/local-time";
 import { getTableOfContents } from "~/lib/toc";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { DashboardTableOfContents } from "~/components/table-of-contents";
+import { SITE_NAME } from "~/constants";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export const generateMetadata = async ({ params }: { params: { slug: string } }) => {
+  const post = allPosts.find((p) => encodeURI(p._raw.flattenedPath) === params.slug);
+
+  if (post) {
+    return {
+      title: `${SITE_NAME}::${post.title}`,
+    };
+  }
+}
+
+export default async function BlogPost({ params }: { params: { slug: string } }) {
   const post = allPosts.find((p) => encodeURI(p._raw.flattenedPath) === params.slug);
   if (!post) {
     notFound();

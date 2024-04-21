@@ -1,6 +1,11 @@
 import { Header } from "~/components/header";
+import { SITE_NAME } from "~/constants";
 
-export default function RootLayout({
+export const metadata = {
+  title: `${SITE_NAME}::关于`,
+}
+
+export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;
