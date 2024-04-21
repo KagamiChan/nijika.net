@@ -11,7 +11,7 @@ const config = {
   prefix: "",
   theme: {
     fontFamily: {
-      sans: ["Noto Sans SC Variable", "ui-sans-serif", "system-ui", "sans-serif"],
+      sans: ["ui-sans-serif", "system-ui", "sans-serif"],
     },
     container: {
       center: true,
