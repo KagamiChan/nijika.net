@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { ImageResponse } from "next/og"
 import { allPosts } from "contentlayer/generated"
+import { readFile } from "node:fs/promises"
 import { SITE_URL } from "~/constants"
 
 const size = {
@@ -31,7 +32,8 @@ export const generateImageMetadata = async ({
 }
 
 const Image = async ({ params }: { params: { slug: string } }) => {
-  // Font
+  const logoData = await readFile("./public/nijika-social.png")
+  const logoSrc = Uint8Array.from(logoData).buffer
 
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
@@ -63,7 +65,7 @@ const Image = async ({ params }: { params: { slug: string } }) => {
             flexDirection: "column",
           }}
         >
-          <img src={`${SITE_URL}/nijika-social.png`} width={600} />
+          <img src={logoSrc as unknown as string} width={600} />
           <span tw="mt-16" style={{ fontSize: "64px" }}>
             来自アトリエ<em tw="text-[#facc15]">にじか</em>的文章
           </span>
