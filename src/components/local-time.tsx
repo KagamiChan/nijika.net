@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { useMounted } from "~/hooks/use-mounted";
-import { cn } from "~/lib/utils";
+import { useMounted } from "~/hooks/use-mounted"
+import { cn } from "~/lib/utils"
 
 interface LocalTimeProps {
-  date: string;
-  className?: string;
+  date: string
+  className?: string
 }
 
 export const LocalTime = ({ date, className }: LocalTimeProps) => {
@@ -15,7 +15,7 @@ export const LocalTime = ({ date, className }: LocalTimeProps) => {
       dateTime={date}
       className={cn(className, "mb-2 block text-xs")}
       suppressHydrationWarning
-      key={mounted ? 'client' : 'server'}
+      key={mounted ? "client" : "server"}
     >
       {new Intl.DateTimeFormat("zh-CN", {
         year: "numeric",
@@ -24,5 +24,5 @@ export const LocalTime = ({ date, className }: LocalTimeProps) => {
         timeZoneName: "long",
       }).format(new Date(date))}
     </time>
-  );
-};
+  )
+}

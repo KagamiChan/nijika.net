@@ -1,18 +1,18 @@
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
-import { pluginFramesTexts } from "@expressive-code/plugin-frames";
-import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
+import { pluginFramesTexts } from "@expressive-code/plugin-frames"
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers"
 import rehypeExpressiveCode, {
   type ExpressiveCodeTheme,
-} from "rehype-expressive-code";
+} from "rehype-expressive-code"
 
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { defineDocumentType, makeSource } from "contentlayer/source-files"
 
 pluginFramesTexts.addLocale("zh", {
   terminalWindowFallbackTitle: "终端窗口",
   copyButtonTooltip: "复制代码",
   copyButtonCopied: "复制成功🎉",
-});
+})
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -28,7 +28,7 @@ export const Post = defineDocumentType(() => ({
       resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
   },
-}));
+}))
 
 export default makeSource({
   contentDirPath: "posts",
@@ -49,8 +49,8 @@ export default makeSource({
         rehypeExpressiveCode,
         {
           customizeTheme: (theme: ExpressiveCodeTheme) => {
-            theme.name = theme.type;
-            return theme;
+            theme.name = theme.type
+            return theme
           },
           themeCssSelector: (theme: ExpressiveCodeTheme) => `.${theme.name}`,
           useDarkModeMediaQuery: false,
@@ -64,4 +64,4 @@ export default makeSource({
       ],
     ],
   },
-});
+})

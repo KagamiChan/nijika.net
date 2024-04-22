@@ -1,4 +1,4 @@
-import { type FC, type HTMLProps, type PropsWithoutRef } from "react";
+import { type FC, type HTMLProps, type PropsWithoutRef } from "react"
 
 export const Logo: FC<PropsWithoutRef<HTMLProps<SVGElement>>> = (props) => (
   <svg
@@ -44,5 +44,4 @@ export const Logo: FC<PropsWithoutRef<HTMLProps<SVGElement>>> = (props) => (
       />
     </g>
   </svg>
-);
-
+)

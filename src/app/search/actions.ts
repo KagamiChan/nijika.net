@@ -1,10 +1,10 @@
-"use server";
-import MiniSearch, { type SearchResult } from "minisearch";
-import { type Post, allPosts } from "contentlayer/generated";
-import * as Sentry from "@sentry/nextjs";
+"use server"
+import MiniSearch, { type SearchResult } from "minisearch"
+import { type Post, allPosts } from "contentlayer/generated"
+import * as Sentry from "@sentry/nextjs"
 
 interface SearchResponse {
-  result: (SearchResult | Post)[] | null;
+  result: (SearchResult | Post)[] | null
 }
 
 const flattenPosts = allPosts.map((post) => ({
@@ -12,9 +12,9 @@ const flattenPosts = allPosts.map((post) => ({
   title: post.title,
   body: post.body.raw,
   url: post.url,
-}));
+}))
 
-const segmenter = new Intl.Segmenter("zh", { granularity: "word" });
+const segmenter = new Intl.Segmenter("zh", { granularity: "word" })
 
 const miniSearch = new MiniSearch({
   fields: ["title", "body"],
@@ -23,8 +23,8 @@ const miniSearch = new MiniSearch({
     [...segmenter.segment(text)]
       .map(({ segment, isWordLike }) => isWordLike && segment)
       .filter(Boolean) as string[],
-});
-miniSearch.addAll(flattenPosts);
+})
+miniSearch.addAll(flattenPosts)
 
 export const handleSearch = async (
   _: SearchResponse,
@@ -37,25 +37,25 @@ export const handleSearch = async (
       recordResponse: true,
     },
     async () => {
-      const query = formData.get("q") as string;
+      const query = formData.get("q") as string
 
       if (!query) {
-        return { result: [] };
+        return { result: [] }
       }
 
       const matched = miniSearch.search(formData.get("q") as string, {
         fuzzy: 0.2,
-      });
+      })
 
       const result = matched.map((item) => {
-        const post = allPosts.find((p) => p._id === item.id);
+        const post = allPosts.find((p) => p._id === item.id)
         return {
           ...item,
           ...post,
-        };
-      });
+        }
+      })
 
-      return { result };
+      return { result }
     },
-  );
-};
+  )
+}

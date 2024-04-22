@@ -1,39 +1,39 @@
-"use client";
+"use client"
 
-import { type Post } from "contentlayer/generated";
-import { type SearchResult } from "minisearch";
-import { useSearchParams } from "next/navigation";
-import { useFormState, useFormStatus } from "react-dom";
-import { PostItem } from "~/components/post-item";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardHeader } from "~/components/ui/card";
-import { Input } from "~/components/ui/input";
-import { handleSearch } from "./actions";
-import { Suspense } from "react";
+import { type Post } from "contentlayer/generated"
+import { type SearchResult } from "minisearch"
+import { useSearchParams } from "next/navigation"
+import { useFormState, useFormStatus } from "react-dom"
+import { PostItem } from "~/components/post-item"
+import { Button } from "~/components/ui/button"
+import { Card, CardContent, CardHeader } from "~/components/ui/card"
+import { Input } from "~/components/ui/input"
+import { handleSearch } from "./actions"
+import { Suspense } from "react"
 
 const SearchButton = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
 
   return (
     <Button type="submit" disabled={pending}>
       搜索
     </Button>
-  );
-};
+  )
+}
 
 const SearchInput = () => {
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()
   return (
     <Input
       name="q"
       placeholder="关键词"
       defaultValue={searchParams.get("q") ?? ""}
     />
-  );
-};
+  )
+}
 
 export const Search = () => {
-  const [formState, action] = useFormState(handleSearch, { result: null });
+  const [formState, action] = useFormState(handleSearch, { result: null })
 
   return (
     <div className="flex flex-col gap-8">
@@ -67,5 +67,5 @@ export const Search = () => {
         <p>未找到任何结果</p>
       )}
     </div>
-  );
-};
+  )
+}

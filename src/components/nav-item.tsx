@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { type ComponentProps } from "react";
-import { cn } from "~/lib/utils";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { type ComponentProps } from "react"
+import { cn } from "~/lib/utils"
 
-type NavItemProps = ComponentProps<typeof Link>;
+type NavItemProps = ComponentProps<typeof Link>
 
 export const NavItem = (props: NavItemProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
     <Link
       {...props}
@@ -23,5 +23,5 @@ export const NavItem = (props: NavItemProps) => {
     >
       {props.children}
     </Link>
-  );
-};
+  )
+}

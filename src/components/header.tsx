@@ -1,11 +1,11 @@
-import { Menu } from "lucide-react";
+import { Menu } from "lucide-react"
 
-import { SiteTitle } from "~/components/site-title";
-import { Button } from "~/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
-import { NavItem } from "./nav-item";
-import { SearchLink } from "./search-link";
-import { ThemeChooser } from "./theme-chooser";
+import { SiteTitle } from "~/components/site-title"
+import { Button } from "~/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet"
+import { NavItem } from "./nav-item"
+import { SearchLink } from "./search-link"
+import { ThemeChooser } from "./theme-chooser"
 
 export const Header = () => {
   return (
@@ -35,5 +35,5 @@ export const Header = () => {
         <ThemeChooser />
       </div>
     </header>
-  );
-};
+  )
+}

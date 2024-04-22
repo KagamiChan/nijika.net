@@ -1,14 +1,14 @@
-'use client'
-import { Search } from "lucide-react";
-import Link from "next/link";
+"use client"
+import { Search } from "lucide-react"
+import Link from "next/link"
 
-import { usePathname } from "next/navigation";
-import { Button } from "~/components/ui/button";
+import { usePathname } from "next/navigation"
+import { Button } from "~/components/ui/button"
 
-const searchPath = '/search'
+const searchPath = "/search"
 
 export const SearchLink = () => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   if (pathname === searchPath) {
     return null
@@ -16,10 +16,10 @@ export const SearchLink = () => {
 
   return (
     <Button variant="ghost" size="icon" asChild>
-    <Link href={searchPath} passHref>
-      <Search className="h-5 w-5" />
-      <span className="sr-only">搜索</span>
-    </Link>
-  </Button>
+      <Link href={searchPath} passHref>
+        <Search className="h-5 w-5" />
+        <span className="sr-only">搜索</span>
+      </Link>
+    </Button>
   )
 }

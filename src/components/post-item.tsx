@@ -1,6 +1,6 @@
-import { type Post } from "contentlayer/generated";
-import Link from "next/link";
-import { LocalTime } from "~/components/local-time";
+import { type Post } from "contentlayer/generated"
+import Link from "next/link"
+import { LocalTime } from "~/components/local-time"
 
 export const PostItem = (post: Post) => {
   return (
@@ -10,5 +10,5 @@ export const PostItem = (post: Post) => {
       </div>
       <LocalTime date={post.date} />
     </div>
-  );
-};
+  )
+}

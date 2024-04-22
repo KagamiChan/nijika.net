@@ -1,41 +1,41 @@
-import { allPosts } from "contentlayer/generated";
-import { notFound } from "next/navigation";
+import { allPosts } from "contentlayer/generated"
+import { notFound } from "next/navigation"
 
-import { Comments } from "~/components/comments";
-import { LocalTime } from "~/components/local-time";
-import { DashboardTableOfContents } from "~/components/table-of-contents";
-import { ScrollArea } from "~/components/ui/scroll-area";
-import { SITE_NAME } from "~/constants";
-import { getTableOfContents } from "~/lib/toc";
+import { Comments } from "~/components/comments"
+import { LocalTime } from "~/components/local-time"
+import { DashboardTableOfContents } from "~/components/table-of-contents"
+import { ScrollArea } from "~/components/ui/scroll-area"
+import { SITE_NAME } from "~/constants"
+import { getTableOfContents } from "~/lib/toc"
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) => {
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  );
+  )
 
   if (post) {
     return {
       title: `${SITE_NAME}::${post.title}`,
-    };
+    }
   }
-};
+}
 
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) {
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  );
+  )
   if (!post) {
-    notFound();
+    notFound()
   }
-  const toc = await getTableOfContents(post.body.raw);
+  const toc = await getTableOfContents(post.body.raw)
   return (
     <>
       <div className="flex gap-16">
@@ -59,5 +59,5 @@ export default async function BlogPost({
       </div>
       <Comments />
     </>
-  );
+  )
 }

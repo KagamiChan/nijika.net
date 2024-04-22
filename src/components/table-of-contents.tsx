@@ -20,8 +20,8 @@ export function DashboardTableOfContents({ toc }: TocProps) {
             .filter(Boolean)
             // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
             .map((id) => id?.split("#")[1]!)
-        : [] as string[],
-    [toc]
+        : ([] as string[]),
+    [toc],
   )
   const activeHeading = useActiveItem(itemIds)
   const mounted = useMounted()
@@ -39,7 +39,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
 }
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState<string>('')
+  const [activeId, setActiveId] = React.useState<string>("")
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,7 +50,7 @@ function useActiveItem(itemIds: string[]) {
           }
         })
       },
-      { rootMargin: `0% 0% -80% 0%` }
+      { rootMargin: `0% 0% -80% 0%` },
     )
 
     itemIds?.forEach((id) => {
@@ -91,7 +91,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                 "inline-block no-underline transition-colors hover:text-foreground",
                 item.url === `#${activeItem}`
                   ? "font-medium text-foreground"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {item.title}

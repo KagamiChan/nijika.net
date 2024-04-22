@@ -1,6 +1,6 @@
-import { Search } from "./search";
+import { Search } from "./search"
 
 const SearchPage = () => {
-  return <Search />;
-};
-export default SearchPage;
+  return <Search />
+}
+export default SearchPage
