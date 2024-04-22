@@ -3,6 +3,7 @@
 import { ImageResponse } from "next/og"
 import { allPosts } from "contentlayer/generated"
 import { readFile } from "node:fs/promises"
+import path from "node:path"
 import { SITE_URL } from "~/constants"
 
 const size = {
@@ -32,7 +33,9 @@ export const generateImageMetadata = async ({
 }
 
 const Image = async ({ params }: { params: { slug: string } }) => {
-  const logoData = await readFile("./public/nijika-social.png")
+  const logoData = await readFile(
+    path.resolve(process.cwd(), "./public/nijika-social.png"),
+  )
   const logoSrc = Uint8Array.from(logoData).buffer
 
   const post = allPosts.find(
