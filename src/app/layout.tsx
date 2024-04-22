@@ -1,6 +1,5 @@
 import "~/styles/globals.css";
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/theme-provider";
 import { SITE_NAME, SITE_URL } from "~/constants";
 import { Noto_Sans_SC } from "next/font/google";
@@ -35,7 +34,6 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-        <SpeedInsights />
       </body>
     </html>
   );
