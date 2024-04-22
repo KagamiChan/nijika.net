@@ -1,18 +1,19 @@
 import { allPosts } from "contentlayer/generated"
+import { type Metadata } from "next"
 import { notFound } from "next/navigation"
 
 import { Comments } from "~/components/comments"
 import { LocalTime } from "~/components/local-time"
 import { DashboardTableOfContents } from "~/components/table-of-contents"
 import { ScrollArea } from "~/components/ui/scroll-area"
-import { SITE_TITLE } from "~/constants"
+import { SITE_TITLE, SITE_URL } from "~/constants"
 import { getTableOfContents } from "~/lib/toc"
 
 export const generateMetadata = async ({
   params,
 }: {
   params: { slug: string }
-}) => {
+}): Promise<Metadata> => {
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
   )
@@ -20,8 +21,12 @@ export const generateMetadata = async ({
   if (post) {
     return {
       title: `${SITE_TITLE}::${post.title}`,
+      openGraph: {
+        url: `${SITE_URL}${post.url}`,
+      },
     }
   }
+  return {}
 }
 
 export default async function BlogPost({

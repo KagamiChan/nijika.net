@@ -12,6 +12,9 @@ export const metadata = {
     "A blog dedicated to web development and various otaku interests",
   metadataBase: new URL(SITE_URL),
   authors: [{ name: "かがみ" }],
+  openGraph: {
+    url: SITE_URL,
+  },
 } satisfies Metadata
 
 const notoSansSC = Noto_Sans_SC({
