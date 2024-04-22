@@ -15,6 +15,7 @@ const config = {
   },
   sentry: {
     hideSourceMaps: true,
+    tunnelRoute: "/telemetry-tunnel",
   },
 };
 
