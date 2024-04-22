@@ -1,6 +1,7 @@
 "use server";
 import MiniSearch, { type SearchResult } from "minisearch";
 import { type Post, allPosts } from "contentlayer/generated";
+import * as Sentry from "@sentry/nextjs";
 
 interface SearchResponse {
   result: (SearchResult | Post)[] | null;
@@ -29,23 +30,32 @@ export const handleSearch = async (
   _: SearchResponse,
   formData: FormData,
 ): Promise<SearchResponse> => {
-  const query = formData.get("q") as string;
+  return await Sentry.withServerActionInstrumentation(
+    "search",
+    {
+      formData,
+      recordResponse: true,
+    },
+    async () => {
+      const query = formData.get("q") as string;
 
-  if (!query) {
-    return { result: [] };
-  }
+      if (!query) {
+        return { result: [] };
+      }
 
-  const matched = miniSearch.search(formData.get("q") as string, {
-    fuzzy: 0.2,
-  });
+      const matched = miniSearch.search(formData.get("q") as string, {
+        fuzzy: 0.2,
+      });
 
-  const result = matched.map((item) => {
-    const post = allPosts.find((p) => p._id === item.id);
-    return {
-      ...item,
-      ...post,
-    };
-  });
+      const result = matched.map((item) => {
+        const post = allPosts.find((p) => p._id === item.id);
+        return {
+          ...item,
+          ...post,
+        };
+      });
 
-  return { result };
+      return { result };
+    },
+  );
 };

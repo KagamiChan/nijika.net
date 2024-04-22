@@ -21,6 +21,7 @@
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
+    "@sentry/nextjs": "^7.111.0",
     "@t3-oss/env-nextjs": "^0.9.2",
     "@types/mdx": "^2.0.13",
     "@vercel/speed-insights": "^1.0.10",
@@ -66,5 +67,5 @@
   "ct3aMetadata": {
     "initVersion": "7.30.0"
   },
-  "packageManager": "pnpm@9.0.3+sha256.f5becd4b77fe9150c8d89423612eb413945114bf6dd00fdcb5940434b84731c4"
+  "packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
 }
