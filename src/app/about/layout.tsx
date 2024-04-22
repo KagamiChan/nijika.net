@@ -1,4 +1,3 @@
-import { CommonLayout } from "~/components/common-layout";
 import { SITE_NAME } from "~/constants";
 
 export const metadata = {
@@ -11,11 +10,9 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <CommonLayout>
-      <article className="prose prose-neutral dark:prose-invert">
-        <h1>关于</h1>
-        {children}
-      </article>
-    </CommonLayout>
+    <article className="prose prose-neutral dark:prose-invert">
+      <h1>关于</h1>
+      {children}
+    </article>
   );
 }

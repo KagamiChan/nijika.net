@@ -1,13 +1,12 @@
-import { notFound } from "next/navigation";
 import { allPosts } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 
-import { CommonLayout } from "~/components/common-layout";
+import { Comments } from "~/components/comments";
 import { LocalTime } from "~/components/local-time";
 import { DashboardTableOfContents } from "~/components/table-of-contents";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { SITE_NAME } from "~/constants";
 import { getTableOfContents } from "~/lib/toc";
-import { Comments } from "~/components/comments";
 
 export const generateMetadata = async ({
   params,
@@ -38,7 +37,7 @@ export default async function BlogPost({
   }
   const toc = await getTableOfContents(post.body.raw);
   return (
-    <CommonLayout>
+    <>
       <div className="flex gap-16">
         <article className="prose prose-neutral dark:prose-invert">
           <LocalTime date={post.date} />
@@ -59,6 +58,6 @@ export default async function BlogPost({
         </div>
       </div>
       <Comments />
-    </CommonLayout>
+    </>
   );
 }
