@@ -1,13 +1,13 @@
 import "~/styles/globals.css"
 
 import { ThemeProvider } from "~/components/theme-provider"
-import { SITE_NAME, SITE_URL } from "~/constants"
+import { SITE_TITLE, SITE_URL } from "~/constants"
 import { Noto_Sans_SC } from "next/font/google"
 import { type Metadata } from "next"
 import { CommonLayout } from "~/components/common-layout"
 
 export const metadata = {
-  title: SITE_NAME,
+  title: SITE_TITLE,
   description:
     "A blog dedicated to web development and various otaku interests",
   metadataBase: new URL(SITE_URL),

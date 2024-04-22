@@ -46,6 +46,7 @@
     "zod": "^3.22.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.1",
     "@tailwindcss/typography": "^0.5.12",
     "@types/eslint": "^8.56.10",
     "@types/mdast": "^4.0.3",

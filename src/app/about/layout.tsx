@@ -1,7 +1,7 @@
-import { SITE_NAME } from "~/constants"
+import { SITE_TITLE } from "~/constants"
 
 export const metadata = {
-  title: `${SITE_NAME}::关于`,
+  title: `${SITE_TITLE}::关于`,
 }
 
 export default function AboutLayout({

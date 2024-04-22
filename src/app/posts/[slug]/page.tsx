@@ -5,7 +5,7 @@ import { Comments } from "~/components/comments"
 import { LocalTime } from "~/components/local-time"
 import { DashboardTableOfContents } from "~/components/table-of-contents"
 import { ScrollArea } from "~/components/ui/scroll-area"
-import { SITE_NAME } from "~/constants"
+import { SITE_TITLE } from "~/constants"
 import { getTableOfContents } from "~/lib/toc"
 
 export const generateMetadata = async ({
@@ -19,7 +19,7 @@ export const generateMetadata = async ({
 
   if (post) {
     return {
-      title: `${SITE_NAME}::${post.title}`,
+      title: `${SITE_TITLE}::${post.title}`,
     }
   }
 }
