@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import { ImageResponse } from "next/og";
-import { allPosts } from "contentlayer/generated";
-import { SITE_URL } from "~/constants";
+import { ImageResponse } from "next/og"
+import { allPosts } from "contentlayer/generated"
+import { SITE_URL } from "~/constants"
 
 const size = {
   width: 1600,
   height: 900,
-};
+}
 
 export const generateImageMetadata = async ({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) => {
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  );
+  )
 
   return [
     {
@@ -27,15 +27,15 @@ export const generateImageMetadata = async ({
       id: "medium",
       size,
     },
-  ];
-};
+  ]
+}
 
 const Image = async ({ params }: { params: { slug: string } }) => {
   // Font
 
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  );
+  )
 
   return new ImageResponse(
     (
@@ -78,7 +78,7 @@ const Image = async ({ params }: { params: { slug: string } }) => {
       // size config to also set the ImageResponse's width and height.
       ...size,
     },
-  );
-};
+  )
+}
 
-export default Image;
+export default Image

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { Logo } from "./logo";
-import { type FC } from "react";
+import Link from "next/link"
+import { Logo } from "./logo"
+import { type FC } from "react"
 
 interface SiteTitleProps {
-  className?: string;
+  className?: string
 }
 
 export const SiteTitle: FC<SiteTitleProps> = ({ className }) => (
@@ -11,4 +11,4 @@ export const SiteTitle: FC<SiteTitleProps> = ({ className }) => (
     <Logo />
     <span className="sr-only">アトリエにじか</span>
   </Link>
-);
+)

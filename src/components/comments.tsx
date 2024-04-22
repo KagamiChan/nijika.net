@@ -1,9 +1,9 @@
-"use client";
-import Giscus from "@giscus/react";
-import { useTheme } from "next-themes";
+"use client"
+import Giscus from "@giscus/react"
+import { useTheme } from "next-themes"
 
 export const Comments = () => {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme()
   return (
     <div className="max-w-[65ch] border-t pt-8">
       <Giscus
@@ -23,5 +23,5 @@ export const Comments = () => {
         strict="1"
       />
     </div>
-  );
-};
+  )
+}
