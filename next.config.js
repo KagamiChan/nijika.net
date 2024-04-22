@@ -4,7 +4,8 @@
  */
 await import("./src/env.js");
 import { withContentlayer } from "next-contentlayer";
-import createMDX from '@next/mdx'
+import { withSentryConfig } from "@sentry/nextjs";
+import createMDX from "@next/mdx";
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -12,8 +13,18 @@ const config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  sentry: {
+    hideSourceMaps: true,
+  },
 };
 
-const withMDX = createMDX()
+const sentryWebpackPluginOptions = {
+  silent: true, // Suppresses all logs
+};
 
-export default withContentlayer(withMDX(config));
+const withMDX = createMDX();
+
+export default withSentryConfig(
+  withContentlayer(withMDX(config)),
+  sentryWebpackPluginOptions,
+);
