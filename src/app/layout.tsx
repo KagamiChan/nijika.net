@@ -22,8 +22,10 @@ const notoSansSC = Noto_Sans_SC({
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode
+  modal: React.ReactNode
 }) {
   return (
     <html lang="zh" suppressHydrationWarning className={notoSansSC.className}>
@@ -34,7 +36,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CommonLayout>{children}</CommonLayout>
+          <CommonLayout>
+            {children}
+            {modal}
+          </CommonLayout>
         </ThemeProvider>
       </body>
     </html>
