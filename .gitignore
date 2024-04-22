@@ -43,3 +43,9 @@ yarn-error.log*
 
 # contentlayer
 .contentlayer
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
