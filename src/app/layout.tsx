@@ -1,9 +1,10 @@
 import "~/styles/globals.css"
 
-import { ThemeProvider } from "~/components/theme-provider"
-import { SITE_TITLE, SITE_URL } from "~/constants"
 import { Noto_Sans_SC } from "next/font/google"
 import { type Metadata } from "next"
+import HolyLoader from "holy-loader"
+import { ThemeProvider } from "~/components/theme-provider"
+import { SITE_TITLE, SITE_URL } from "~/constants"
 import { CommonLayout } from "~/components/common-layout"
 
 export const metadata = {
@@ -43,6 +44,7 @@ export default function RootLayout({
             {children}
             {modal}
           </CommonLayout>
+          <HolyLoader color="hsl(var(--primary))" />
         </ThemeProvider>
       </body>
     </html>

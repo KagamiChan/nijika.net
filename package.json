@@ -12,6 +12,7 @@
   "dependencies": {
     "@expressive-code/plugin-frames": "^0.35.2",
     "@expressive-code/plugin-line-numbers": "^0.35.2",
+    "@formkit/auto-animate": "^0.8.2",
     "@giscus/react": "^3.0.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -28,6 +29,7 @@
     "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
+    "holy-loader": "^2.3.1",
     "lucide-react": "^0.368.0",
     "mdast-util-toc": "^7.0.0",
     "minisearch": "^6.3.0",
