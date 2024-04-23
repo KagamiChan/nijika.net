@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
@@ -10,9 +11,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-    fontFamily: {
-      sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
-    },
     container: {
       center: true,
       padding: '2rem',
@@ -21,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-noto-sans-sc)', ...fontFamily.sans],
+        mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
