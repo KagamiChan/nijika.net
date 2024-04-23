@@ -1,6 +1,7 @@
-import Link from "next/link"
-import { Logo } from "./logo"
-import { type FC } from "react"
+import Link from 'next/link'
+import { type FC } from 'react'
+
+import { Logo } from './logo'
 
 interface SiteTitleProps {
   className?: string

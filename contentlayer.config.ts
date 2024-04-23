@@ -1,37 +1,36 @@
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
-import rehypeSlug from "rehype-slug"
-import { pluginFramesTexts } from "@expressive-code/plugin-frames"
-import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers"
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
+import { pluginFramesTexts } from '@expressive-code/plugin-frames'
+import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import rehypeExpressiveCode, {
   type ExpressiveCodeTheme,
-} from "rehype-expressive-code"
+} from 'rehype-expressive-code'
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
-
-pluginFramesTexts.addLocale("zh", {
-  terminalWindowFallbackTitle: "终端窗口",
-  copyButtonTooltip: "复制代码",
-  copyButtonCopied: "复制成功🎉",
+pluginFramesTexts.addLocale('zh', {
+  terminalWindowFallbackTitle: '终端窗口',
+  copyButtonTooltip: '复制代码',
+  copyButtonCopied: '复制成功🎉',
 })
 
 export const Post = defineDocumentType(() => ({
-  name: "Post",
+  name: 'Post',
   filePathPattern: `**/*.md`,
-  contentType: "markdown",
+  contentType: 'markdown',
   fields: {
-    title: { type: "string", required: true },
-    date: { type: "date", required: true },
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
   },
   computedFields: {
     url: {
-      type: "string",
+      type: 'string',
       resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: "posts",
+  contentDirPath: 'posts',
   documentTypes: [Post],
   markdown: {
     rehypePlugins: [
@@ -40,8 +39,8 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ["subheading-anchor"],
-            ariaLabel: "到本部分内容的链接",
+            className: ['subheading-anchor'],
+            ariaLabel: '到本部分内容的链接',
           },
         },
       ],
@@ -54,9 +53,9 @@ export default makeSource({
           },
           themeCssSelector: (theme: ExpressiveCodeTheme) => `.${theme.name}`,
           useDarkModeMediaQuery: false,
-          defaultLocale: "zh-CN",
+          defaultLocale: 'zh-CN',
           plugins: [pluginLineNumbers()],
-          themes: ["dark-plus", "light-plus"],
+          themes: ['dark-plus', 'light-plus'],
           defaultProps: {
             wrap: true,
           },

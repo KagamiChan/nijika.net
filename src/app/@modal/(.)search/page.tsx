@@ -1,5 +1,5 @@
-import { Search } from "~/app/search/search"
-import { SearchModal } from "~/components/modal"
+import { Search } from '~/app/search/search'
+import { SearchModal } from '~/components/modal'
 
 const SearchPage = () => {
   return (

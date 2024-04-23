@@ -36,12 +36,18 @@ const config = {
         },
       },
     ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+      },
+    ],
   },
   overrides: [
     {
-      extends: ['plugin:@typescript-eslint/disable-type-checked'],
-      files: ['./**/*.mjs'],
+      extends: ["plugin:@typescript-eslint/disable-type-checked"],
+      files: ["./**/*.mjs"],
     },
   ],
-};
-module.exports = config;
+}
+module.exports = config

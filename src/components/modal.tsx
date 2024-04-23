@@ -1,8 +1,9 @@
-"use client"
+'use client'
 
-import { useRouter } from "next/navigation"
-import { Content } from "@radix-ui/react-dialog"
-import { type PropsWithChildren, type FC } from "react"
+import { useRouter } from 'next/navigation'
+import { Content } from '@radix-ui/react-dialog'
+import { type PropsWithChildren, type FC } from 'react'
+
 import {
   Dialog,
   DialogContent,
@@ -10,7 +11,7 @@ import {
   DialogTitle,
   DialogOverlay,
   DialogPortal,
-} from "~/components/ui/dialog"
+} from '~/components/ui/dialog'
 
 export const SearchModal: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter()

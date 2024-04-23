@@ -1,27 +1,28 @@
-import "~/styles/globals.css"
+import '~/styles/globals.css'
 
-import { Noto_Sans_SC } from "next/font/google"
-import { type Metadata } from "next"
-import HolyLoader from "holy-loader"
-import { ThemeProvider } from "~/components/theme-provider"
-import { SITE_TITLE, SITE_URL } from "~/constants"
-import { CommonLayout } from "~/components/common-layout"
+import { Noto_Sans_SC } from 'next/font/google'
+import { type Metadata } from 'next'
+import HolyLoader from 'holy-loader'
+
+import { ThemeProvider } from '~/components/theme-provider'
+import { SITE_TITLE, SITE_URL } from '~/constants'
+import { CommonLayout } from '~/components/common-layout'
 
 export const metadata = {
   title: SITE_TITLE,
   description:
-    "A blog dedicated to web development and various otaku interests",
+    'A blog dedicated to web development and various otaku interests',
   metadataBase: new URL(SITE_URL),
-  authors: [{ name: "かがみ" }],
+  authors: [{ name: 'かがみ' }],
   openGraph: {
     url: SITE_URL,
   },
 } satisfies Metadata
 
 const notoSansSC = Noto_Sans_SC({
-  display: "swap",
+  display: 'swap',
   preload: false,
-  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
+  fallback: ['ui-sans-serif', 'system-ui', 'sans-serif'],
 })
 
 export default function RootLayout({

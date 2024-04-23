@@ -1,6 +1,7 @@
-import { type Post } from "contentlayer/generated"
-import Link from "next/link"
-import { LocalTime } from "~/components/local-time"
+import Link from 'next/link'
+
+import { type Post } from 'contentlayer/generated'
+import { LocalTime } from '~/components/local-time'
 
 export const PostItem = (post: Post) => {
   return (

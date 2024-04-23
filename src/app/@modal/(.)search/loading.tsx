@@ -1,5 +1,5 @@
-import { SkeletonModal } from "~/components/modal"
-import { Skeleton } from "~/components/ui/skeleton"
+import { SkeletonModal } from '~/components/modal'
+import { Skeleton } from '~/components/ui/skeleton'
 
 const Loading = () => {
   return (

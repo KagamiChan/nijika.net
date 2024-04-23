@@ -1,6 +1,6 @@
-"use client"
-import Giscus from "@giscus/react"
-import { useTheme } from "next-themes"
+'use client'
+import Giscus from '@giscus/react'
+import { useTheme } from 'next-themes'
 
 export const Comments = () => {
   const { resolvedTheme } = useTheme()

@@ -1,6 +1,8 @@
-import { type Metadata } from "next"
-import { SITE_TITLE, SITE_URL } from "~/constants"
-import { Search } from "./search"
+import { type Metadata } from 'next'
+
+import { Search } from './search'
+
+import { SITE_TITLE, SITE_URL } from '~/constants'
 
 export const metadata = {
   title: `${SITE_TITLE}::搜索`,

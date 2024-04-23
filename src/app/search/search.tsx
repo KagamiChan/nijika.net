@@ -1,15 +1,17 @@
-"use client"
+'use client'
 
-import { type Post } from "contentlayer/generated"
-import { type SearchResult } from "minisearch"
-import { useSearchParams } from "next/navigation"
-import { useFormState, useFormStatus } from "react-dom"
-import { PostItem } from "~/components/post-item"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardHeader } from "~/components/ui/card"
-import { Input } from "~/components/ui/input"
-import { handleSearch } from "./actions"
-import { Suspense } from "react"
+import { type SearchResult } from 'minisearch'
+import { useSearchParams } from 'next/navigation'
+import { useFormState, useFormStatus } from 'react-dom'
+import { Suspense } from 'react'
+
+import { handleSearch } from './actions'
+
+import { type Post } from 'contentlayer/generated'
+import { PostItem } from '~/components/post-item'
+import { Button } from '~/components/ui/button'
+import { Card, CardContent, CardHeader } from '~/components/ui/card'
+import { Input } from '~/components/ui/input'
 
 const SearchButton = () => {
   const { pending } = useFormStatus()
@@ -27,7 +29,7 @@ const SearchInput = () => {
     <Input
       name="q"
       placeholder="关键词"
-      defaultValue={searchParams.get("q") ?? ""}
+      defaultValue={searchParams.get('q') ?? ''}
     />
   )
 }
@@ -53,7 +55,7 @@ export const Search = () => {
               {formState.result!.map((item: SearchResult | Post) => (
                 <div key={item._id as string}>
                   <div className="text-sm">
-                    有 {Object.keys((item as SearchResult).match).length}{" "}
+                    有 {Object.keys((item as SearchResult).match).length}{' '}
                     个模糊匹配结果
                   </div>
                   <PostItem {...(item as Post)} />

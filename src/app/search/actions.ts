@@ -1,7 +1,8 @@
-"use server"
-import MiniSearch, { type SearchResult } from "minisearch"
-import { type Post, allPosts } from "contentlayer/generated"
-import * as Sentry from "@sentry/nextjs"
+'use server'
+import MiniSearch, { type SearchResult } from 'minisearch'
+import * as Sentry from '@sentry/nextjs'
+
+import { type Post, allPosts } from 'contentlayer/generated'
 
 interface SearchResponse {
   result: (SearchResult | Post)[] | null
@@ -14,11 +15,11 @@ const flattenPosts = allPosts.map((post) => ({
   url: post.url,
 }))
 
-const segmenter = new Intl.Segmenter("zh", { granularity: "word" })
+const segmenter = new Intl.Segmenter('zh', { granularity: 'word' })
 
 const miniSearch = new MiniSearch({
-  fields: ["title", "body"],
-  storeFields: ["title", "url"],
+  fields: ['title', 'body'],
+  storeFields: ['title', 'url'],
   tokenize: (text) =>
     [...segmenter.segment(text)]
       .map(({ segment, isWordLike }) => isWordLike && segment)
@@ -31,19 +32,19 @@ export const handleSearch = async (
   formData: FormData,
 ): Promise<SearchResponse> => {
   return await Sentry.withServerActionInstrumentation(
-    "search",
+    'search',
     {
       formData,
       recordResponse: true,
     },
     async () => {
-      const query = formData.get("q") as string
+      const query = formData.get('q') as string
 
       if (!query) {
         return { result: [] }
       }
 
-      const matched = miniSearch.search(formData.get("q") as string, {
+      const matched = miniSearch.search(formData.get('q') as string, {
         fuzzy: 0.2,
       })
 

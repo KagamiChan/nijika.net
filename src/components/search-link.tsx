@@ -1,11 +1,11 @@
-"use client"
-import { Search } from "lucide-react"
-import Link from "next/link"
+'use client'
+import { Search } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-import { usePathname } from "next/navigation"
-import { Button } from "~/components/ui/button"
+import { Button } from '~/components/ui/button'
 
-const searchPath = "/search"
+const searchPath = '/search'
 
 export const SearchLink = () => {
   const pathname = usePathname()

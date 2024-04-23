@@ -1,7 +1,8 @@
-import { allPosts } from "contentlayer/generated"
-import { compareDesc } from "date-fns"
+import { compareDesc } from 'date-fns'
 
-import { PostItem } from "../components/post-item"
+import { PostItem } from '../components/post-item'
+
+import { allPosts } from 'contentlayer/generated'
 
 export default function AppHome() {
   const posts = allPosts.sort((a, b) =>

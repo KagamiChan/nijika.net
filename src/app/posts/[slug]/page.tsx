@@ -1,13 +1,13 @@
-import { allPosts } from "contentlayer/generated"
-import { type Metadata } from "next"
-import { notFound } from "next/navigation"
+import { type Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
-import { Comments } from "~/components/comments"
-import { LocalTime } from "~/components/local-time"
-import { DashboardTableOfContents } from "~/components/table-of-contents"
-import { ScrollArea } from "~/components/ui/scroll-area"
-import { SITE_TITLE, SITE_URL } from "~/constants"
-import { getTableOfContents } from "~/lib/toc"
+import { allPosts } from 'contentlayer/generated'
+import { Comments } from '~/components/comments'
+import { LocalTime } from '~/components/local-time'
+import { DashboardTableOfContents } from '~/components/table-of-contents'
+import { ScrollArea } from '~/components/ui/scroll-area'
+import { SITE_TITLE, SITE_URL } from '~/constants'
+import { getTableOfContents } from '~/lib/toc'
 
 export const generateMetadata = async ({
   params,

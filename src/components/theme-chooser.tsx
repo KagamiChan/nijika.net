@@ -1,16 +1,16 @@
-"use client"
+'use client'
 
-import { MoonIcon, SunIcon } from "lucide-react"
-import { useTheme } from "next-themes"
+import { MoonIcon, SunIcon } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
-import { Button } from "~/components/ui/button"
+import { Button } from '~/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu"
+} from '~/components/ui/dropdown-menu'
 
 export const ThemeChooser = () => {
   const { theme, setTheme } = useTheme()
