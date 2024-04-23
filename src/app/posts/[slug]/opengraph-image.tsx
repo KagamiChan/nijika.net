@@ -33,9 +33,7 @@ export const generateImageMetadata = async ({
 }
 
 const Image = async ({ params }: { params: { slug: string } }) => {
-  const logoData = await readFile(
-    path.resolve(process.cwd(), "./public/nijika-social.png"),
-  )
+  const logoData = await readFile(path.resolve(process.cwd(), "./logo.png"))
   const logoSrc = Uint8Array.from(logoData).buffer
 
   const post = allPosts.find(
