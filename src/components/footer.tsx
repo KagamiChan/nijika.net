@@ -12,9 +12,12 @@ export const Footer = () => {
         授权
       </p>
       {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA && (
-        <p className="font-mono">
-          版本：{process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA.slice(0, 7)}-
-          {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}
+        <p>
+          版本：
+          <pre>
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA.slice(0, 7)}-
+            {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}
+          </pre>
         </p>
       )}
     </footer>
