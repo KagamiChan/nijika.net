@@ -2,14 +2,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { ImageResponse } from "next/og"
 import { allPosts } from "contentlayer/generated"
-import { readFile } from "node:fs/promises"
-import path from "node:path"
 import { SITE_URL } from "~/constants"
 
 const size = {
   width: 1600,
   height: 900,
 }
+
+export const runtime = "edge"
 
 export const generateImageMetadata = async ({
   params,
@@ -33,10 +33,9 @@ export const generateImageMetadata = async ({
 }
 
 const Image = async ({ params }: { params: { slug: string } }) => {
-  const logoData = await readFile(
-    path.resolve(process.cwd(), "./public/nijika-social.png"),
+  const logoSrc = await fetch(new URL("./logo.png", import.meta.url)).then(
+    (res) => res.arrayBuffer(),
   )
-  const logoSrc = Uint8Array.from(logoData).buffer
 
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
