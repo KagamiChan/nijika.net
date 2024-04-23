@@ -10,7 +10,6 @@ export default function Article({
   params: { slug: string }
   toc: ReactNode
 }) {
-  console.log(params)
   const post = allPosts.find(
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
   )
