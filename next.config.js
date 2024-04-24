@@ -9,7 +9,7 @@ import createMDX from '@next/mdx'
 
 /** @type {import("next").NextConfig} */
 const config = {
-  pageExtensions: ['tsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   eslint: {
     ignoreDuringBuilds: true,
   },
