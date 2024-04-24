@@ -15,8 +15,11 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Install dependencies
+      - name: Install pnpm
         run: corepack install
+
+      - name: Install dependencies
+        run: corepack pnpm install
 
       - name: Install Playwright Browsers
         run: corepack pnpm exec playwright install --with-deps
