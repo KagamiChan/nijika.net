@@ -8,6 +8,11 @@ main {
 code,
 kbd,
 pre,
-samp {
+samp,
+.gsc-is-fixed-width,
+.blob-num,
+.commit-tease-sha,
+.blob-code-inner,
+.markdown .footnotes .data-footnote-backref .g-emoji {
   font-family: "JetBrains Mono", "Noto Sans SC", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
