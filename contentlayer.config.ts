@@ -62,7 +62,7 @@ export default makeSource({
           // FIXME: this config file could not load tailwind default them so the list could not be computed on the fly
           styleOverrides: {
             codeFontFamily:
-              'var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+              'var(--font-jetbrains-mono), var(--font-noto-sans-sc), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
             uiFontFamily:
               'var(--font-noto-sans-sc), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
           },

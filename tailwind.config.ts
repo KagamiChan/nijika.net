@@ -21,7 +21,11 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-noto-sans-sc)', ...fontFamily.sans],
-        mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
+        mono: [
+          'var(--font-jetbrains-mono)',
+          'var(--font-noto-sans-sc)',
+          ...fontFamily.mono,
+        ],
       },
       colors: {
         border: 'hsl(var(--border))',
