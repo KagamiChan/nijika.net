@@ -14,10 +14,10 @@ export const Footer = () => {
       {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA && (
         <p>
           版本：
-          <pre>
+          <span className="font-mono">
             {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA.slice(0, 7)}-
             {process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF}
-          </pre>
+          </span>
         </p>
       )}
     </footer>
