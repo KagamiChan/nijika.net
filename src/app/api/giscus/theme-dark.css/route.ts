@@ -1,3 +1,5 @@
+import { headers } from '../headers'
+
 export const runtime = 'edge'
 
 export const GET = async () => {
@@ -8,6 +10,6 @@ export const GET = async () => {
     new URL('../font-patch.txt', import.meta.url),
   ).then((res) => res.text())
   return new Response(`${fontPatch}\n\n${css}`, {
-    headers: { 'content-type': 'text/plain' },
+    headers,
   })
 }

@@ -4,6 +4,10 @@ import { useTheme } from 'next-themes'
 
 export const Comments = () => {
   const { resolvedTheme } = useTheme()
+  const theme =
+    resolvedTheme === 'dark'
+      ? 'https://nijika.net/api/giscus/theme-light.css'
+      : 'https://nijika.net/api/giscus/theme-dark.css'
   return (
     <div className="max-w-[65ch] border-t pt-8">
       <Giscus
@@ -17,7 +21,7 @@ export const Comments = () => {
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme={resolvedTheme}
+        theme={theme}
         lang="zh-CN"
         loading="lazy"
         strict="1"
