@@ -19,7 +19,7 @@ export default function Article({
   return (
     <article className="prose prose-neutral flex-1 dark:prose-invert">
       <LocalTime date={post.date} />
-      <h1>{post.title}</h1>
+      <h1 className="text-pretty">{post.title}</h1>
       <div
         className="[&>*:last-child]:mb-0 [&>*]:mb-3"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
