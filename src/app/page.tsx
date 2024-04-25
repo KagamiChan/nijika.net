@@ -10,9 +10,9 @@ export default function AppHome() {
   )
   return (
     <div className="flex flex-col gap-4">
-      {posts.map((post) => (
-        <PostItem key={post._id} {...post} />
-      ))}
+      {posts.map(
+        (post) => !post.internal && <PostItem key={post._id} {...post} />,
+      )}
     </div>
   )
 }

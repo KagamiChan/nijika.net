@@ -1,6 +1,7 @@
 ---
 title: Markdown syntax tests
 date: 2024-04-20
+internal: true
 ---
 
 - [Overview](#overview)
