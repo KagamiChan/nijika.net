@@ -1,10 +1,9 @@
-import { ClipboardCopyIcon } from 'lucide-react'
+import { TwitterShare } from './twitter-share'
+import { CopyToClipboard } from './copy-to-clipboard'
 
 import { allPosts } from 'contentlayer/generated'
-import { Button } from '~/components/ui/button'
-import { Input } from '~/components/ui/input'
-import { ensurePostId } from '~/lib/redis'
 import { SITE_URL } from '~/constants'
+import { ensurePostId } from '~/lib/redis'
 
 const ShortUrl = async ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find(
@@ -27,9 +26,8 @@ const ShortUrl = async ({ params }: { params: { slug: string } }) => {
         本文短链接：<a href={url}>{url}</a>
       </span>
 
-      <Button variant="ghost" size="icon" aria-label="复制">
-        <ClipboardCopyIcon />
-      </Button>
+      <CopyToClipboard text={url} />
+      <TwitterShare url={url} />
     </div>
   )
 }
