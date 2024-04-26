@@ -4,9 +4,11 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
 import { ImageResponse } from 'next/og'
+import { notFound } from 'next/navigation'
 
 import { allPosts } from 'contentlayer/generated'
 import { SITE_URL } from '~/constants'
+import { ensurePostId } from '~/lib/redis'
 
 const size = {
   width: 1600,
@@ -44,6 +46,12 @@ const Image = async ({ params }: { params: { slug: string } }) => {
     (p) => encodeURI(p._raw.flattenedPath) === params.slug,
   )
 
+  if (!post) {
+    notFound()
+  }
+
+  const postId = (await ensurePostId(post._raw.flattenedPath)) ?? ''
+
   return new ImageResponse(
     (
       // ImageResponse JSX element
@@ -75,7 +83,7 @@ const Image = async ({ params }: { params: { slug: string } }) => {
             来自アトリエ<em tw="text-[#facc15]">にじか</em>的文章
           </span>
           <span>{post?.title}</span>
-          <span style={{ fontSize: '48px' }}>{`${SITE_URL}${post?.url}`}</span>
+          <span style={{ fontSize: '48px' }}>{`${SITE_URL}/${postId}`}</span>
         </div>
       </div>
     ),
