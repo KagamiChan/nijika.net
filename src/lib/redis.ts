@@ -89,3 +89,21 @@ export const getUrlById = async (id: string) => {
     Object.entries(maps).find(([_, record]) => record.id === id)?.[0] ?? null
   )
 }
+
+export const increaseCount = async (key: string) => {
+  const redis = ensureRedis()
+  if (!redis) {
+    return null
+  }
+
+  return redis.incr(key)
+}
+
+export const getCount = async (key: string) => {
+  const redis = ensureRedis()
+  if (!redis) {
+    return null
+  }
+
+  return redis.get<number>(key)
+}
