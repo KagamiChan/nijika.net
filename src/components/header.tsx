@@ -1,9 +1,13 @@
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import Link from 'next/link'
+
 import { NavItem } from './nav-item'
 import { SearchLink } from './search-link'
 import { SideNav } from './side-nav'
 import { ThemeChooser } from './theme-chooser'
 
 import { SiteTitle } from '~/components/site-title'
+import { Button } from '~/components/ui/button'
 
 export const Header = () => {
   return (
@@ -17,6 +21,17 @@ export const Header = () => {
       <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <SearchLink />
         <ThemeChooser />
+        <Button
+          variant="ghost"
+          size="icon"
+          title="源代码"
+          aria-label="源代码"
+          asChild
+        >
+          <Link href="https://github.com/kagamichan/nijika.net" target="_blank">
+            <SiGithub />
+          </Link>
+        </Button>
       </div>
     </header>
   )

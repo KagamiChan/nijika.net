@@ -15,7 +15,7 @@ export const SearchLink = () => {
   }
 
   return (
-    <Button variant="ghost" size="icon" asChild>
+    <Button variant="ghost" size="icon" asChild title="搜索" aria-label="搜索">
       <Link href={searchPath} passHref>
         <Search className="h-5 w-5" />
         <span className="sr-only">搜索</span>
