@@ -32,7 +32,7 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
     "holy-loader": "^2.3.1",
-    "lucide-react": "^0.374.0",
+    "lucide-react": "^0.376.0",
     "mdast-util-toc": "^7.0.0",
     "minisearch": "^6.3.0",
     "nanoid": "^5.0.7",
