@@ -3,7 +3,7 @@ import { type NextRequest } from 'next/server'
 import { increaseCount } from '~/lib/redis'
 import { getViewsKeyByPostPath } from '~/lib/utils'
 
-export const increaseViews = async (path?: string) => {
+const increaseViews = async (path?: string) => {
   if (!path) {
     return -1
   }
