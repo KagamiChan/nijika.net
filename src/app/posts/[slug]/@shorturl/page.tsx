@@ -6,7 +6,7 @@ import { SITE_URL } from '~/constants'
 import { ensurePostId } from '~/lib/redis'
 
 const ShortUrl = async ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = allPosts.find((p) => p.slug === params.slug)
   if (!post) {
     return null
   }

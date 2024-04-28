@@ -1,14 +1,13 @@
 import { notFound } from 'next/navigation'
 import { type ReactNode } from 'react'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { Views } from './views'
 
-import { MdxContent } from '~/components/mdx-content'
 import { allPosts } from 'contentlayer/generated'
 import { LocalTime } from '~/components/local-time'
-import { getViewsKeyByPostPath } from '~/lib/utils'
+import { MdxContent } from '~/components/mdx-content'
 import { getCount } from '~/lib/redis'
+import { getViewsKeyByPostPath } from '~/lib/utils'
 
 export default async function Article({
   params,
@@ -16,7 +15,8 @@ export default async function Article({
   params: { slug: string }
   toc: ReactNode
 }) {
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = allPosts.find((p) => p.slug === params.slug)
+  console.log(allPosts, params.slug)
   if (!post) {
     notFound()
   }
