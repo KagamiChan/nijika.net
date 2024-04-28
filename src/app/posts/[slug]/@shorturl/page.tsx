@@ -6,13 +6,11 @@ import { SITE_URL } from '~/constants'
 import { ensurePostId } from '~/lib/redis'
 
 const ShortUrl = async ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
   if (!post) {
     return null
   }
-  const id = await ensurePostId(post._raw.flattenedPath)
+  const id = await ensurePostId(post.slug)
 
   if (!id) {
     return null

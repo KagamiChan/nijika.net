@@ -20,9 +20,7 @@ export const generateImageMetadata = async ({
 }: {
   params: { slug: string }
 }) => {
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
 
   return [
     {
@@ -42,15 +40,13 @@ const Image = async ({ params }: { params: { slug: string } }) => {
   )
   const logoSrc = Uint8Array.from(logoData).buffer
 
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
 
   if (!post) {
     notFound()
   }
 
-  const postId = (await ensurePostId(post._raw.flattenedPath)) ?? ''
+  const postId = (await ensurePostId(post.slug)) ?? ''
 
   return new ImageResponse(
     (

@@ -10,9 +10,7 @@ export const generateMetadata = async ({
 }: {
   params: { slug: string }
 }): Promise<Metadata> => {
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
 
   if (post) {
     return {
@@ -31,9 +29,7 @@ export default async function BlogPost({
   params: { slug: string }
   toc: ReactNode
 }) {
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
   if (!post) {
     notFound()
   }

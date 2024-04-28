@@ -7,7 +7,13 @@ export const GET = async (
   req: NextRequest,
   { params }: { params: { slug: string } },
 ) => {
-  const url = await getUrlById(decodeURI(params.slug))
+  let slug = ''
+  try {
+    slug = decodeURI(params.slug)
+  } catch {
+    return redirect('/')
+  }
+  const url = await getUrlById(slug)
 
   if (!url) {
     redirect('/')

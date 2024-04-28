@@ -16,7 +16,7 @@ pluginFramesTexts.addLocale('zh', {
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: 'posts/**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -24,16 +24,37 @@ export const Post = defineDocumentType(() => ({
     internal: { type: 'boolean', required: false },
   },
   computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => encodeURIComponent(doc.title),
+    },
     url: {
       type: 'string',
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: (doc) => `/posts/${encodeURIComponent(doc.title)}`,
+    },
+  },
+}))
+
+export const StandalonePage = defineDocumentType(() => ({
+  name: 'StandalonePage',
+  filePathPattern: 'pages/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    internal: { type: 'boolean', required: false },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => encodeURIComponent(doc.title),
     },
   },
 }))
 
 export default makeSource({
-  contentDirPath: 'posts',
-  documentTypes: [Post],
+  contentDirPath: 'contents',
+  documentTypes: [Post, StandalonePage],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

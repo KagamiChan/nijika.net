@@ -20,7 +20,7 @@ const mdxComponents = {
   ),
 } satisfies MDXComponents
 
-export const Content = ({
+export const MdxContent = ({
   code,
   className,
 }: {

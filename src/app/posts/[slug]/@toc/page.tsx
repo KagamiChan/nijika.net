@@ -4,9 +4,7 @@ import { ScrollArea } from '~/components/ui/scroll-area'
 import { getTableOfContents } from '~/lib/toc'
 
 const ToC = async ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find(
-    (p) => encodeURI(p._raw.flattenedPath) === params.slug,
-  )
+  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
   if (!post) {
     return null
   }
