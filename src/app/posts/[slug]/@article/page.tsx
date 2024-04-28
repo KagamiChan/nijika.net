@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
 import { type ReactNode } from 'react'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { Views } from './views'
+import { Content } from './content'
 
 import { allPosts } from 'contentlayer/generated'
 import { LocalTime } from '~/components/local-time'
@@ -31,10 +33,10 @@ export default async function Article({
       <div className="h-4 w-full text-sm">
         <Views path={post._raw.flattenedPath} initialViews={initialViews} />
       </div>
-      <div
+      <Content
+        code={post.body.code}
         className="[&>*:last-child]:mb-0 [&>*]:mb-3"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      ></div>
+      ></Content>
     </>
   )
 }
