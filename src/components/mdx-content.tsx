@@ -1,4 +1,3 @@
-import { type MDXComponents } from 'mdx/types'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image, { type ImageProps } from 'next/image'
 import { type DetailedHTMLProps, type ImgHTMLAttributes } from 'react'
@@ -18,14 +17,14 @@ const mdxComponents = {
       {...(props as ImageProps)}
     />
   ),
-} satisfies MDXComponents
+}
 
 export const MdxContent = ({
   code,
   className,
 }: {
   code: string
-  className: string
+  className?: string
 }) => {
   const MDX = useMDXComponent(code)
 

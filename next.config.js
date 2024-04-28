@@ -5,7 +5,6 @@
 await import('./src/env.js')
 import { withContentlayer } from 'next-contentlayer'
 import { withSentryConfig } from '@sentry/nextjs'
-import createMDX from '@next/mdx'
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -23,9 +22,7 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
 }
 
-const withMDX = createMDX()
-
 export default withSentryConfig(
-  withContentlayer(withMDX(config)),
+  withContentlayer(config),
   sentryWebpackPluginOptions,
 )

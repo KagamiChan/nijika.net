@@ -41,14 +41,7 @@ export const StandalonePage = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
-    internal: { type: 'boolean', required: false },
-  },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => encodeURIComponent(doc.title),
-    },
+    id: { type: 'string', required: true },
   },
 }))
 
