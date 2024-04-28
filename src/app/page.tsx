@@ -11,7 +11,10 @@ export default function AppHome() {
   return (
     <div className="flex flex-col gap-4">
       {posts.map(
-        (post) => !post.internal && <PostItem key={post._id} {...post} />,
+        (post) =>
+          (!post.internal || process.env.NODE_ENV === 'development') && (
+            <PostItem key={post._id} {...post} />
+          ),
       )}
     </div>
   )

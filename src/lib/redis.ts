@@ -6,6 +6,7 @@ const ID_LENGTH = 4
 
 enum PostsIDStorageKeys {
   URLMap = 'postsURLMap',
+  Views = 'views',
   KnownIds = 'postsKnownIds',
 }
 
@@ -43,21 +44,23 @@ export const ensureNewId = async (): Promise<string | null> =>
     return id
   })
 
-export const ensurePostId = async (str: string): Promise<string | null> => {
+export const ensurePostId = async (
+  postPath: string,
+): Promise<string | null> => {
   const redis = ensureRedis()
   if (!redis) {
     return null
   }
-  const [entry] =
-    (await redis.json.get<URLMapEntry[]>(
-      PostsIDStorageKeys.URLMap,
-      `$.${str}`,
-    )) ?? []
+
+  const entry = await redis.hget<URLMapEntry>(
+    PostsIDStorageKeys.URLMap,
+    postPath,
+  )
 
   if (!entry) {
     const id = await ensureNewId()
-    await redis.json.set(PostsIDStorageKeys.URLMap, '$', {
-      [str]: {
+    await redis.hset(PostsIDStorageKeys.URLMap, {
+      [postPath]: {
         id,
         createdAt: Date.now(),
       },
@@ -75,19 +78,13 @@ export const getUrlById = async (id: string) => {
     return
   }
 
-  const [maps] =
-    (await redis.json.get<Record<string, URLMapEntry>[]>(
-      PostsIDStorageKeys.URLMap,
-      '$',
-    )) ?? []
+  const map = await redis.hget<URLMapEntry>(PostsIDStorageKeys.URLMap, id)
 
-  if (!maps) {
+  if (!map) {
     return null
   }
 
-  return (
-    Object.entries(maps).find(([_, record]) => record.id === id)?.[0] ?? null
-  )
+  return map.id
 }
 
 export const increaseCount = async (key: string) => {
@@ -96,7 +93,7 @@ export const increaseCount = async (key: string) => {
     return null
   }
 
-  return redis.incr(key)
+  return redis.hincrby(PostsIDStorageKeys.Views, key, 1)
 }
 
 export const getCount = async (key: string) => {
@@ -105,5 +102,5 @@ export const getCount = async (key: string) => {
     return null
   }
 
-  return redis.get<number>(key)
+  return redis.hget<number>(PostsIDStorageKeys.Views, key)
 }

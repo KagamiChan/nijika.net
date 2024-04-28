@@ -7,7 +7,6 @@ export const GET = async (
   req: NextRequest,
   { params }: { params: { slug: string } },
 ) => {
-  console.log(params.slug)
   const url = await getUrlById(decodeURI(params.slug))
 
   if (!url) {
