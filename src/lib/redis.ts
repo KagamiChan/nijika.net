@@ -1,6 +1,7 @@
 import { Redis } from '@upstash/redis'
-import { nanoid } from 'nanoid'
 import pRetry from 'p-retry'
+
+import { randomId } from './random-id'
 
 const ID_LENGTH = 4
 
@@ -36,7 +37,7 @@ export const ensureNewId = async (): Promise<string | null> =>
       return null
     }
 
-    const id = nanoid(ID_LENGTH).toLowerCase()
+    const id = randomId(ID_LENGTH)
     if (await redis.sismember(PostsIDStorageKeys.KnownIds, id)) {
       throw new Error('ID already exists')
     }
