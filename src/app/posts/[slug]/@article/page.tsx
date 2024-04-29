@@ -16,7 +16,6 @@ export default async function Article({
   toc: ReactNode
 }) {
   const post = allPosts.find((p) => p.slug === params.slug)
-  console.log(allPosts, params.slug)
   if (!post) {
     notFound()
   }
