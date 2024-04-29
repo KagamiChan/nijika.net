@@ -3,5 +3,11 @@
   "extends": [
     "config:recommended",
     ":automergeStableNonMajor"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["eslint", "remark-gfm"],
+      "enabled": false
+    }
   ]
 }
