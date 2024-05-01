@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 import { type NextRequest } from 'next/server'
 
-import { getUrlById } from '~/lib/redis'
+import { allPosts } from 'contentlayer/generated'
 
 export const GET = async (
   req: NextRequest,
@@ -13,11 +13,11 @@ export const GET = async (
   } catch {
     return redirect('/')
   }
-  const url = await getUrlById(slug)
+  const post = allPosts.find((p) => p.id === slug)
 
-  if (!url) {
+  if (!post) {
     redirect('/')
   }
 
-  redirect(`/posts/${encodeURI(url)}`)
+  redirect(`/posts/${encodeURI(post.id)}`)
 }

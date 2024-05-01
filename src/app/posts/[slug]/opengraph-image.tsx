@@ -40,13 +40,11 @@ const Image = async ({ params }: { params: { slug: string } }) => {
   )
   const logoSrc = Uint8Array.from(logoData).buffer
 
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = allPosts.find((p) => p.slug === params.slug)
 
   if (!post) {
     notFound()
   }
-
-  const postId = (await ensurePostId(post.slug)) ?? ''
 
   return new ImageResponse(
     (
@@ -79,7 +77,7 @@ const Image = async ({ params }: { params: { slug: string } }) => {
             来自アトリエ<em tw="text-[#facc15]">にじか</em>的文章
           </span>
           <span>{post?.title}</span>
-          <span style={{ fontSize: '48px' }}>{`${SITE_URL}/${postId}`}</span>
+          <span style={{ fontSize: '48px' }}>{`${SITE_URL}/${post.id}`}</span>
         </div>
       </div>
     ),

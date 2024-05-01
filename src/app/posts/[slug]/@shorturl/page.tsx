@@ -3,20 +3,14 @@ import { CopyToClipboard } from './copy-to-clipboard'
 
 import { allPosts } from 'contentlayer/generated'
 import { SITE_URL } from '~/constants'
-import { ensurePostId } from '~/lib/redis'
 
 const ShortUrl = async ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find((p) => p.slug === params.slug)
   if (!post) {
     return null
   }
-  const id = await ensurePostId(post.slug)
 
-  if (!id) {
-    return null
-  }
-
-  const url = new URL(id, SITE_URL).toString()
+  const url = new URL(post.id, SITE_URL).toString()
 
   return (
     <div className="prose prose-neutral flex max-w-[65ch] items-center gap-4 pr-4 dark:prose-invert">
