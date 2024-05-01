@@ -3,12 +3,11 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import { ImageResponse } from 'next/og'
 import { notFound } from 'next/navigation'
+import { ImageResponse } from 'next/og'
 
 import { allPosts } from 'contentlayer/generated'
 import { SITE_URL } from '~/constants'
-import { ensurePostId } from '~/lib/redis'
 
 const size = {
   width: 1600,
@@ -65,17 +64,16 @@ const Image = async ({ params }: { params: { slug: string } }) => {
       >
         <div
           style={{
-            width: '100%',
+            width: '80%',
             display: 'flex',
             alignContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
+            textWrap: 'pretty',
+            textAlign: 'center',
           }}
         >
           <img src={logoSrc as unknown as string} width={600} />
-          <span tw="mt-16" style={{ fontSize: '64px' }}>
-            来自アトリエ<em tw="text-[#facc15]">にじか</em>的文章
-          </span>
           <span>{post?.title}</span>
           <span style={{ fontSize: '48px' }}>{`${SITE_URL}/${post.id}`}</span>
         </div>
