@@ -19,5 +19,5 @@ export const GET = async (
     redirect('/')
   }
 
-  redirect(`/posts/${encodeURI(post.id)}`)
+  redirect(`/posts/${post.slug}`)
 }
