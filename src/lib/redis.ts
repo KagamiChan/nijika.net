@@ -1,5 +1,6 @@
 import { Redis } from '@upstash/redis'
 import pRetry from 'p-retry'
+import pMap from 'p-map'
 
 import { randomId } from './random-id'
 
@@ -9,6 +10,7 @@ enum PostsIDStorageKeys {
   URLMap = 'postsURLMap',
   Views = 'views',
   KnownIds = 'postsKnownIds',
+  LatestCommit = 'latestCommit',
 }
 
 interface URLMapEntry {
@@ -104,4 +106,61 @@ export const getCount = async (key: string) => {
   }
 
   return redis.hget<number>(PostsIDStorageKeys.Views, key)
+}
+
+export const ping = async (): Promise<number[]> => {
+  const redis = ensureRedis()
+  if (!redis) {
+    return []
+  }
+
+  const pings = await pMap(
+    new Array(5),
+    async () => {
+      performance.mark('redis-ping-start')
+      await redis.ping()
+      performance.mark('redis-ping-end')
+
+      return performance.measure(
+        'redis-ping',
+        'redis-ping-start',
+        'redis-ping-end',
+      ).duration
+    },
+    { concurrency: 1 },
+  )
+  return pings
+}
+
+interface Commit {
+  sha: string
+  url: string
+  commit: {
+    message: string
+  }
+}
+
+export const getLatestCommit = async (): Promise<Commit> => {
+  const redis = ensureRedis()
+  if (!redis) {
+    return {} as Commit
+  }
+
+  const commit = await redis.get<Commit>(PostsIDStorageKeys.LatestCommit)
+  if (!commit) {
+    console.log('no commit cached')
+    const resp = await fetch(
+      'https://api.github.com/repos/kagamichan/nijika.net/commits/main',
+    )
+    if (!resp.ok) {
+      return {} as Commit
+    }
+    const result = (await resp.json()) as Commit
+    await redis.set(PostsIDStorageKeys.LatestCommit, result, {
+      ex: 10 * 60,
+    })
+    return result
+  }
+
+  return commit
 }
