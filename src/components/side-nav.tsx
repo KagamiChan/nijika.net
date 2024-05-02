@@ -30,6 +30,9 @@ export const SideNav = () => {
               <NavItem href="/">首页</NavItem>
             </SheetClose>
             <SheetClose asChild>
+              <NavItem href="/friends">朋友们</NavItem>
+            </SheetClose>
+            <SheetClose asChild>
               <NavItem href="/about">关于</NavItem>
             </SheetClose>
           </ul>

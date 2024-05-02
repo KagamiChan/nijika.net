@@ -16,6 +16,7 @@ export const Header = () => {
         <SiteTitle className="flex items-center gap-2 text-4xl font-semibold" />
         <ul className="flex gap-4">
           <NavItem href="/">首页</NavItem>
+          <NavItem href="/friends">朋友们</NavItem>
           <NavItem href="/about">关于</NavItem>
         </ul>
       </nav>
