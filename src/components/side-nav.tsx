@@ -25,12 +25,14 @@ export const SideNav = () => {
       <SheetContent side="left">
         <nav className="grid gap-6 text-lg font-medium">
           <SiteTitle className="flex items-center gap-2 text-2xl font-semibold" />
-          <SheetClose asChild>
-            <NavItem href="/">首页</NavItem>
-          </SheetClose>
-          <SheetClose asChild>
-            <NavItem href="/about">关于</NavItem>
-          </SheetClose>
+          <ul>
+            <SheetClose asChild>
+              <NavItem href="/">首页</NavItem>
+            </SheetClose>
+            <SheetClose asChild>
+              <NavItem href="/about">关于</NavItem>
+            </SheetClose>
+          </ul>
         </nav>
       </SheetContent>
     </Sheet>

@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.2",
     "@expressive-code/plugin-frames": "^0.35.2",
     "@expressive-code/plugin-line-numbers": "^0.35.2",
     "@formkit/auto-animate": "^0.8.2",
@@ -29,6 +30,7 @@
     "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
+    "framer-motion": "^11.1.7",
     "holy-loader": "^2.3.1",
     "lucide-react": "^0.376.0",
     "mdast-util-toc": "^7.0.0",
