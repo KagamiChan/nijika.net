@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from 'react'
+import { motion } from 'framer-motion'
 
 import { type TableOfContents } from '~/lib/toc'
 import { cn } from '~/lib/utils'
@@ -84,17 +85,24 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
     <ul className={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn('mt-0 pt-2')}>
+          <li key={index} className="mt-0 pt-2">
             <a
               href={item.url}
               className={cn(
-                'inline-block no-underline transition-colors hover:text-foreground',
+                'relative inline-block no-underline transition-colors hover:text-foreground',
                 item.url === `#${activeItem}`
                   ? 'font-medium text-foreground'
                   : 'text-muted-foreground',
               )}
             >
               {item.title}
+
+              {item.url === `#${activeItem}` && (
+                <motion.div
+                  layoutId="toc-highlight"
+                  className="absolute bottom-0 left-[-0.5rem] top-0 h-full w-0.5 bg-primary"
+                />
+              )}
             </a>
             {item.items?.length ? (
               <Tree tree={item} level={level + 1} activeItem={activeItem} />

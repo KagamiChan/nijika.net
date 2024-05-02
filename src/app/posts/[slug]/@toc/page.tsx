@@ -14,7 +14,7 @@ const ToC = async ({ params }: { params: { slug: string } }) => {
     <div className="hidden text-sm xl:block">
       <div className="fixed top-[10rem] -mt-10 pt-4">
         <ScrollArea className="pb-10">
-          <div className="sticky top-[10rem] -mt-10 h-[calc(100vh-3.5rem)] py-12">
+          <div className="sticky top-[10rem] -mt-10 h-[calc(100vh-3.5rem)] py-12 pl-4">
             <DashboardTableOfContents toc={toc} />
           </div>
         </ScrollArea>
