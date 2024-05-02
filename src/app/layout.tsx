@@ -43,7 +43,7 @@ export default function RootLayout({
       lang="zh"
       suppressHydrationWarning
       className={cn(
-        'font-sans antialiased',
+        'scroll-pt-16 font-sans antialiased',
         notoSansSC.variable,
         jetbrainsMono.variable,
       )}
