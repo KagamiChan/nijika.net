@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
 
 import { allPosts } from 'contentlayer/generated'
-import { SITE_URL } from '~/constants'
+import { SITE_TITLE, SITE_URL } from '~/constants'
 
 const size = {
   width: 1600,
@@ -24,8 +24,8 @@ export const generateImageMetadata = async ({
   return [
     {
       alt: post?.title
-        ? `来自アトリエにじか的文章：${post.title}`
-        : '来自アトリエにじか的文章',
+        ? `来自${SITE_TITLE}的文章：${post.title}`
+        : `来自${SITE_TITLE}的文章`,
       contentType: 'image/png',
       id: 'medium',
       size,
