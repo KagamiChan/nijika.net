@@ -11,7 +11,7 @@ export const SiteTitle: FC<SiteTitleProps> = ({ className }) => (
   <Link href="/" className={className}>
     <h1>
       <Logo />
-      <span className="sr-only">アトリエにじか</span>
+      <span className="sr-only">虹夏工房</span>
     </h1>
   </Link>
 )

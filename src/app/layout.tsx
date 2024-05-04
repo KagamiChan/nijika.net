@@ -11,8 +11,7 @@ import { cn } from '~/lib/utils'
 
 export const metadata = {
   title: SITE_TITLE,
-  description:
-    'A blog dedicated to web development and various otaku interests',
+  description: '一个关于互联网开发的技术博客，偶尔也会讨论一些宅话题',
   metadataBase: new URL(SITE_URL),
   authors: [{ name: 'かがみ' }],
   openGraph: {
