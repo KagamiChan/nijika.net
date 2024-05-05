@@ -5,6 +5,13 @@ import rehypeExpressiveCode, {
 } from 'rehype-expressive-code'
 import rehypeSlug from 'rehype-slug'
 import { defineConfig, s } from 'velite'
+import { pluginFramesTexts } from '@expressive-code/plugin-frames'
+
+pluginFramesTexts.addLocale('zh', {
+  terminalWindowFallbackTitle: '终端窗口',
+  copyButtonTooltip: '复制代码',
+  copyButtonCopied: '复制成功🎉',
+})
 
 export default defineConfig({
   root: 'contents',

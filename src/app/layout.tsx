@@ -3,11 +3,13 @@ import '~/styles/globals.css'
 import { Noto_Sans_SC, JetBrains_Mono } from 'next/font/google'
 import { type Metadata } from 'next'
 import HolyLoader from 'holy-loader'
+import { Suspense } from 'react'
 
 import { ThemeProvider } from '~/components/theme-provider'
 import { SITE_TITLE, SITE_URL } from '~/constants'
 import { CommonLayout } from '~/components/common-layout'
 import { cn } from '~/lib/utils'
+import { CodeCopyHack } from '~/components/code-copy-hack'
 
 export const metadata = {
   title: SITE_TITLE,
@@ -59,6 +61,9 @@ export default function RootLayout({
             {modal}
           </CommonLayout>
           <HolyLoader color="hsl(var(--primary))" />
+          <Suspense fallback={null}>
+            <CodeCopyHack />
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
