@@ -2,16 +2,16 @@
 import MiniSearch, { type SearchResult } from 'minisearch'
 import * as Sentry from '@sentry/nextjs'
 
-import { type Post, allPosts } from 'contentlayer/generated'
+import { type Post, posts } from 'velite/generated'
 
 interface SearchResponse {
   result: (SearchResult | Post)[] | null
 }
 
-const flattenPosts = allPosts.map((post) => ({
-  id: post._id,
+const flattenPosts = posts.map((post) => ({
+  id: post.id,
   title: post.title,
-  body: post.body.raw,
+  body: post.raw,
   url: post.url,
 }))
 
@@ -49,7 +49,7 @@ export const handleSearch = async (
       })
 
       const result = matched.map((item) => {
-        const post = allPosts.find((p) => p._id === item.id)
+        const post = posts.find((p) => p.id === item.id)
         return {
           ...item,
           ...post,

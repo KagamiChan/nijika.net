@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { type Post } from 'contentlayer/generated'
+import { type Post } from 'velite/generated'
 import { LocalTime } from '~/components/local-time'
 
 export const PostItem = (post: Post) => {

@@ -6,7 +6,7 @@ import path from 'node:path'
 import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
 
-import { allPosts } from 'contentlayer/generated'
+import { posts } from 'velite/generated'
 import { SITE_TITLE, SITE_URL } from '~/constants'
 
 const size = {
@@ -19,7 +19,7 @@ export const generateImageMetadata = async ({
 }: {
   params: { slug: string }
 }) => {
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = posts.find((p) => encodeURI(p.slug) === params.slug)
 
   return [
     {
@@ -39,7 +39,7 @@ const Image = async ({ params }: { params: { slug: string } }) => {
   )
   const logoSrc = Uint8Array.from(logoData).buffer
 
-  const post = allPosts.find((p) => p.slug === params.slug)
+  const post = posts.find((p) => p.slug === params.slug)
 
   if (!post) {
     notFound()
