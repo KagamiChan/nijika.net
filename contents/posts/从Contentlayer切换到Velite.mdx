@@ -1,0 +1,33 @@
+---
+title: 从Contentlayer切换到Velite
+date: 2024-5-6
+id: kza1o
+---
+
+我在一年多前就听说了Contentlayer，它也是我决定使用Next.js来建博客的原因之一。然而很不幸地，这个项目因为一些大人的原因，已经是无人维护的状态。当然现在其实还是可以用，功能上没有任何缺失，就只是和一些其它工具，比如remark-gfm@4有兼容问题，以及依赖没法更新到最新让人感觉略微烦躁，等等缺点。
+
+虽然也有人在努力接手这个工具，并且实际上也有原作者（之一）授权的[fork](https://github.com/timlrx/contentlayer2)，但是因为xz事件还没过多久，以及观摩了一下接手人的[第一个PR](https://github.com/timlrx/contentlayer2/pull/1)，我觉得还是另想方法比较好。
+
+虽然我自己fork了一份代码，想看看自己是不是有能力改一个版本自用，但是看了一些用Effect.ts写的代码，比如下面这样的
+
+```ts
+// fs.ts
+const fileOrDirExists = (pathLike: string): T.Effect<OT.HasTracer, StatError, boolean> => {
+  return pipe(
+    stat(pathLike),
+    T.map((stat_) => stat_.isFile() || stat_.isDirectory()),
+    T.catchTag('fs.FileNotFoundError', () => T.succeed(false)),
+    T.tap((exists) => OT.addAttribute('exists', exists)),
+    OT.withSpan('fileOrDirExists', { attributes: { pathLike } }),
+  )
+}
+```
+
+我觉得暂时只能另请高明了。当然Effect.ts本身是挺好的，只是我暂时无法投入这么多时间去熟悉。
+
+有热心的开发者已经整理了[一些替代方案](https://github.com/contentlayerdev/contentlayer/issues/429#issuecomment-1974928678)，在这里面看了一圈之后，我选择了Velite，目前试用下来感觉体验不错，和Contentlayer相比，多了以下一些好处：
+
++ 内置了基于mdast-util-toc的文档目录的生成
++ 基于zod的数据验证可以实现更复杂的需求，比如唯一的ID
+
+迁移转换过程除了mdx渲染改动比较大，其它地方都挺平滑的。目前感觉不太合理的地方是，大量的依赖都打包到项目里面了，的确是少了纠结版本冲突的麻烦，但是在用户这边更新依赖就需要等Velite上游，在感知安全风险通知和接受安全更新方面会很受限制。
