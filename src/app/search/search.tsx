@@ -7,7 +7,7 @@ import { Suspense } from 'react'
 
 import { handleSearch } from './actions'
 
-import { type Post } from 'contentlayer/generated'
+import { type Post } from 'velite/generated'
 import { PostItem } from '~/components/post-item'
 import { Button } from '~/components/ui/button'
 import { Card, CardContent, CardHeader } from '~/components/ui/card'
@@ -53,7 +53,7 @@ export const Search = () => {
           <CardContent>
             <div className="flex flex-col gap-4">
               {formState.result!.map((item: SearchResult | Post) => (
-                <div key={item._id as string}>
+                <div key={item.id as string}>
                   <div className="text-sm">
                     有 {Object.keys((item as SearchResult).match).length}{' '}
                     个模糊匹配结果

@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
-import { allPosts, allStandalonePages } from 'contentlayer/generated'
+import { posts, standalonePages } from 'velite/generated'
 import { MdxContent } from '~/components/mdx-content'
 import { SITE_TITLE, SITE_URL } from '~/constants'
 
@@ -16,7 +16,7 @@ export const generateMetadata = async ({
   } catch {
     return redirect('/')
   }
-  const page = allStandalonePages.find((p) => p.id === slug)!
+  const page = standalonePages.find((p) => p.id === slug)!
 
   if (page) {
     return {
@@ -37,13 +37,13 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     return redirect('/')
   }
 
-  const post = allPosts.find((p) => p.id === slug)
+  const post = posts.find((p) => p.id === slug)
 
   if (post) {
     redirect(`/posts/${post.slug}`)
   }
 
-  const page = allStandalonePages.find((p) => p.id === slug)
+  const page = standalonePages.find((p) => p.id === slug)
 
   if (!page) {
     redirect('/')
@@ -53,7 +53,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     <article className="prose prose-neutral dark:prose-invert">
       <h1 className="text-pretty">{page.title}</h1>
       <MdxContent
-        code={page.body.code}
+        code={page.code}
         className="[&>*:last-child]:mb-0 [&>*]:mb-3"
       />
     </article>

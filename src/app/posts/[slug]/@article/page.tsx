@@ -3,7 +3,7 @@ import { type ReactNode } from 'react'
 
 import { Views } from './views'
 
-import { allPosts } from 'contentlayer/generated'
+import { posts } from 'velite/generated'
 import { LocalTime } from '~/components/local-time'
 import { MdxContent } from '~/components/mdx-content'
 import { getCount } from '~/lib/redis'
@@ -18,7 +18,7 @@ export default async function Article({
   params: { slug: string }
   toc: ReactNode
 }) {
-  const post = allPosts.find((p) => p.slug === params.slug)
+  const post = posts.find((p) => p.slug === params.slug)
   if (!post) {
     notFound()
   }
@@ -26,7 +26,7 @@ export default async function Article({
   const key = await getViewsKeyByPostPath(post.slug)
   const initialViews = (await getCount(key)) ?? 0
 
-  const toc = await getTableOfContents(post.body.raw)
+  const toc = await getTableOfContents(post.raw)
 
   return (
     <>
@@ -37,7 +37,7 @@ export default async function Article({
           <Views path={post.slug} initialViews={initialViews} />
         </div>
         <MdxContent
-          code={post.body.code}
+          code={post.code}
           className="[&>*:last-child]:mb-0 [&>*]:mb-3"
         />
       </article>

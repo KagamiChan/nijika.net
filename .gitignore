@@ -41,9 +41,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# contentlayer
-.contentlayer
-
 # playwright
 /test-results/
 /playwright-report/
@@ -51,3 +48,6 @@ yarn-error.log*
 /playwright/.cache/
 
 .vercel
+
+# velite
+.velite

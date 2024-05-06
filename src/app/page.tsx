@@ -2,18 +2,18 @@ import { compareDesc } from 'date-fns'
 
 import { PostItem } from '../components/post-item'
 
-import { allPosts } from 'contentlayer/generated'
+import { posts } from 'velite/generated'
 
 export default function AppHome() {
-  const posts = allPosts.sort((a, b) =>
+  const sorted = posts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   )
   return (
     <div className="flex flex-col gap-4">
-      {posts.map(
+      {sorted.map(
         (post) =>
           (!post.internal || process.env.NODE_ENV === 'development') && (
-            <PostItem key={post._id} {...post} />
+            <PostItem key={post.slug} {...post} />
           ),
       )}
     </div>

@@ -1,11 +1,11 @@
 import { TwitterShare } from './twitter-share'
 import { CopyToClipboard } from './copy-to-clipboard'
 
-import { allPosts } from 'contentlayer/generated'
+import { posts } from 'velite/generated'
 import { SITE_URL } from '~/constants'
 
 const ShortUrl = async ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((p) => p.slug === params.slug)
+  const post = posts.find((p) => p.slug === params.slug)
   if (!post) {
     return null
   }

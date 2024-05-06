@@ -1,12 +1,11 @@
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeSlug from 'rehype-slug'
-import { pluginFramesTexts } from '@expressive-code/plugin-frames'
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExpressiveCode, {
   type ExpressiveCodeTheme,
 } from 'rehype-expressive-code'
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
+import { defineConfig, s } from 'velite'
+import { pluginFramesTexts } from '@expressive-code/plugin-frames'
 
 pluginFramesTexts.addLocale('zh', {
   terminalWindowFallbackTitle: '终端窗口',
@@ -14,43 +13,40 @@ pluginFramesTexts.addLocale('zh', {
   copyButtonCopied: '复制成功🎉',
 })
 
-export const Post = defineDocumentType(() => ({
-  name: 'Post',
-  filePathPattern: 'posts/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
-    internal: { type: 'boolean', required: false },
-    id: { type: 'string', required: true },
-  },
-  computedFields: {
-    slug: {
-      type: 'string',
-      resolve: (doc) => encodeURIComponent(doc.title),
+export default defineConfig({
+  root: 'contents',
+  collections: {
+    posts: {
+      name: 'Post',
+      pattern: 'posts/**/*.mdx',
+      schema: s
+        .object({
+          title: s.string(),
+          date: s.isodate(),
+          id: s.unique(),
+          internal: s.optional(s.boolean()),
+          code: s.mdx(),
+          raw: s.raw(),
+        })
+        .transform((data) => ({
+          ...data,
+          slug: encodeURIComponent(data.title),
+          url: `/posts/${encodeURIComponent(data.title)}`,
+        })),
     },
-    url: {
-      type: 'string',
-      resolve: (doc) => `/posts/${encodeURIComponent(doc.title)}`,
+    standalonePages: {
+      name: 'StandalonePage',
+      pattern: 'pages/**/*.mdx',
+      schema: s.object({
+        title: s.string(),
+        id: s.unique(),
+        code: s.mdx(),
+        raw: s.raw(),
+      }),
     },
   },
-}))
-
-export const StandalonePage = defineDocumentType(() => ({
-  name: 'StandalonePage',
-  filePathPattern: 'pages/**/*.mdx',
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    id: { type: 'string', required: true },
-  },
-}))
-
-export default makeSource({
-  contentDirPath: 'contents',
-  documentTypes: [Post, StandalonePage],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    gfm: true,
     rehypePlugins: [
       rehypeSlug,
       [

@@ -2,7 +2,7 @@ import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { type ReactNode } from 'react'
 
-import { allPosts } from 'contentlayer/generated'
+import { posts } from 'velite/generated'
 import { SITE_TITLE, SITE_URL } from '~/constants'
 
 export const generateMetadata = async ({
@@ -10,7 +10,7 @@ export const generateMetadata = async ({
 }: {
   params: { slug: string }
 }): Promise<Metadata> => {
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = posts.find((p) => encodeURI(p.slug) === params.slug)
 
   if (post) {
     return {
@@ -29,7 +29,7 @@ export default async function BlogPost({
   params: { slug: string }
   toc: ReactNode
 }) {
-  const post = allPosts.find((p) => encodeURI(p.slug) === params.slug)
+  const post = posts.find((p) => encodeURI(p.slug) === params.slug)
   if (!post) {
     notFound()
   }
