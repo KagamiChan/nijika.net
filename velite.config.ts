@@ -27,6 +27,7 @@ export default defineConfig({
           internal: s.optional(s.boolean()),
           code: s.mdx(),
           raw: s.raw(),
+          toc: s.toc(),
         })
         .transform((data) => ({
           ...data,
@@ -42,6 +43,7 @@ export default defineConfig({
         id: s.unique(),
         code: s.mdx(),
         raw: s.raw(),
+        toc: s.toc(),
       }),
     },
   },
