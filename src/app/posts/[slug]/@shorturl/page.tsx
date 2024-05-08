@@ -10,7 +10,7 @@ const ShortUrl = async ({ params }: { params: { slug: string } }) => {
     return null
   }
 
-  const url = new URL(post.id, SITE_URL).toString()
+  const url = new URL(post.id ?? '', SITE_URL).toString()
 
   return (
     <div className="prose prose-neutral flex max-w-[65ch] items-center gap-4 pr-4 dark:prose-invert">
