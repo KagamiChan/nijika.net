@@ -1,3 +1,6 @@
+import fs from 'node:fs/promises'
+import path from 'node:path'
+
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExpressiveCode, {
@@ -6,6 +9,12 @@ import rehypeExpressiveCode, {
 import rehypeSlug from 'rehype-slug'
 import { defineConfig, s } from 'velite'
 import { pluginFramesTexts } from '@expressive-code/plugin-frames'
+import pMap from 'p-map'
+import pRetry from 'p-retry'
+import matter from 'gray-matter'
+import { customAlphabet } from 'nanoid'
+
+const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz', 5)
 
 pluginFramesTexts.addLocale('zh', {
   terminalWindowFallbackTitle: '终端窗口',
@@ -23,17 +32,20 @@ export default defineConfig({
         .object({
           title: s.string(),
           date: s.isodate(),
-          id: s.unique(),
+          id: s.optional(s.unique()),
           internal: s.optional(s.boolean()),
           code: s.mdx(),
           raw: s.raw(),
           toc: s.toc(),
+          path: s.path(),
         })
-        .transform((data) => ({
-          ...data,
-          slug: encodeURIComponent(data.title),
-          url: `/posts/${encodeURIComponent(data.title)}`,
-        })),
+        .transform(async (data) => {
+          return {
+            ...data,
+            slug: encodeURIComponent(data.title),
+            url: `/posts/${encodeURIComponent(data.title)}`,
+          }
+        }),
     },
     standalonePages: {
       name: 'StandalonePage',
@@ -85,5 +97,28 @@ export default defineConfig({
         },
       ],
     ],
+  },
+  prepare: async (data) => {
+    const knownIds = data.posts.map((post) => post.id).filter(Boolean)
+    const pendingAssignments = data.posts.filter((post) => !post.id)
+
+    await pMap(pendingAssignments, async (post) => {
+      const id = await pRetry(() => {
+        const id = nanoid()
+        if (knownIds.includes(id)) {
+          throw new Error('ID collision')
+        }
+        return id
+      })
+      const file = path.resolve(process.cwd(), 'contents', `${post.path}.mdx`)
+      const content = await fs.readFile(file, 'utf-8')
+      const result = matter(content)
+      const newContent = matter.stringify(result.content, {
+        ...result.data,
+        id,
+      })
+      await fs.writeFile(file, newContent)
+      console.log(`Assigned ID ${id} to ${post.title}`)
+    })
   },
 })
