@@ -43,7 +43,7 @@ importers:
         version: 1.0.2(@types/react@18.3.1)(react@18.3.1)
       '@sentry/nextjs':
         specifier: ^7.111.0
-        version: 7.114.0(next@14.2.3(@opentelemetry/api@1.8.0)(@playwright/test@1.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(webpack@5.91.0(esbuild@0.20.2))
+        version: 7.114.0(next@14.2.3(@opentelemetry/api@1.8.0)(@playwright/test@1.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(webpack@5.91.0(esbuild@0.21.1))
       '@t3-oss/env-nextjs':
         specifier: ^0.10.0
         version: 0.10.1(typescript@5.4.5)(zod@3.23.7)
@@ -152,7 +152,7 @@ importers:
         version: 3.0.2
       '@types/webpack':
         specifier: ^5.28.5
-        version: 5.28.5(esbuild@0.20.2)
+        version: 5.28.5(esbuild@0.21.1)
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.7.0
         version: 7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
@@ -160,11 +160,11 @@ importers:
         specifier: ^7.7.0
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       esbuild:
-        specifier: ^0.20.2
-        version: 0.20.2
+        specifier: ^0.21.0
+        version: 0.21.1
       esbuild-register:
         specifier: ^3.5.0
-        version: 3.5.0(esbuild@0.20.2)
+        version: 3.5.0(esbuild@0.21.1)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -5180,7 +5180,7 @@ snapshots:
       '@sentry/utils': 7.114.0
       localforage: 1.10.0
 
-  '@sentry/nextjs@7.114.0(next@14.2.3(@opentelemetry/api@1.8.0)(@playwright/test@1.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(webpack@5.91.0(esbuild@0.20.2))':
+  '@sentry/nextjs@7.114.0(next@14.2.3(@opentelemetry/api@1.8.0)(@playwright/test@1.44.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(webpack@5.91.0(esbuild@0.21.1))':
     dependencies:
       '@rollup/plugin-commonjs': 24.0.0(rollup@2.78.0)
       '@sentry/core': 7.114.0
@@ -5198,7 +5198,7 @@ snapshots:
       rollup: 2.78.0
       stacktrace-parser: 0.1.10
     optionalDependencies:
-      webpack: 5.91.0(esbuild@0.20.2)
+      webpack: 5.91.0(esbuild@0.21.1)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -5358,11 +5358,11 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@types/webpack@5.28.5(esbuild@0.20.2)':
+  '@types/webpack@5.28.5(esbuild@0.21.1)':
     dependencies:
       '@types/node': 20.12.11
       tapable: 2.2.1
-      webpack: 5.91.0(esbuild@0.20.2)
+      webpack: 5.91.0(esbuild@0.21.1)
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
@@ -6155,10 +6155,10 @@ snapshots:
       is-date-object: 1.0.5
       is-symbol: 1.0.4
 
-  esbuild-register@3.5.0(esbuild@0.20.2):
+  esbuild-register@3.5.0(esbuild@0.21.1):
     dependencies:
       debug: 4.3.4
-      esbuild: 0.20.2
+      esbuild: 0.21.1
     transitivePeerDependencies:
       - supports-color
 
@@ -8498,16 +8498,16 @@ snapshots:
 
   tapable@2.2.1: {}
 
-  terser-webpack-plugin@5.3.10(esbuild@0.20.2)(webpack@5.91.0(esbuild@0.20.2)):
+  terser-webpack-plugin@5.3.10(esbuild@0.21.1)(webpack@5.91.0(esbuild@0.21.1)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.30.4
-      webpack: 5.91.0(esbuild@0.20.2)
+      webpack: 5.91.0(esbuild@0.21.1)
     optionalDependencies:
-      esbuild: 0.20.2
+      esbuild: 0.21.1
 
   terser@5.30.4:
     dependencies:
@@ -8815,7 +8815,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.91.0(esbuild@0.20.2):
+  webpack@5.91.0(esbuild@0.21.1):
     dependencies:
       '@types/eslint-scope': 3.7.7
       '@types/estree': 1.0.5
@@ -8838,7 +8838,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(esbuild@0.20.2)(webpack@5.91.0(esbuild@0.20.2))
+      terser-webpack-plugin: 5.3.10(esbuild@0.21.1)(webpack@5.91.0(esbuild@0.21.1))
       watchpack: 2.4.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:
