@@ -208,8 +208,8 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
       velite:
-        specifier: 0.1.0-rc.0
-        version: 0.1.0-rc.0
+        specifier: 0.1.0-rc.3
+        version: 0.1.0-rc.3
       vitest:
         specifier: ^1.5.2
         version: 1.6.0(@types/node@20.12.11)(terser@5.31.0)
@@ -3917,11 +3917,6 @@ packages:
       uglify-js:
         optional: true
 
-  terser@5.30.4:
-    resolution: {integrity: sha512-xRdd0v64a8mFK9bnsKVdoNP9GQIKUAaJPTaqEQDL4w/J8WaW4sWXXoMZ+6SimPkfT5bElreXf8m9HnmPc3E1BQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   terser@5.31.0:
     resolution: {integrity: sha512-Q1JFAoUKE5IMfI4Z/lkE/E6+SwgzO+x4tq4v1AyBLRj8VSYvRO6A/rQrPg1yud4g0En9EKI1TvFRF2tQFcoUkg==}
     engines: {node: '>=10'}
@@ -4108,8 +4103,8 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  velite@0.1.0-rc.0:
-    resolution: {integrity: sha512-2w3+Hiouv0P7fOlexrdV3rA+I+E/wk1FncnkFU6boOEyiKO6ukz45w2aARuqz2SkHqu9xJ4TAc/5sfaow+O/Qg==}
+  velite@0.1.0-rc.3:
+    resolution: {integrity: sha512-oBtGUZP8V2sqYGnH1ERpvZqE1sbjIFGsjg+D1zA7bzt2oQpvxYhBKtkOt4hDZIXPpTnWfx7HDnFSxZSQXVdReQ==}
     engines: {node: ^18.17.0 || >=20.3.0}
     hasBin: true
 
@@ -8504,17 +8499,10 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.30.4
+      terser: 5.31.0
       webpack: 5.91.0(esbuild@0.21.1)
     optionalDependencies:
       esbuild: 0.21.1
-
-  terser@5.30.4:
-    dependencies:
-      '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
-      commander: 2.20.3
-      source-map-support: 0.5.21
 
   terser@5.31.0:
     dependencies:
@@ -8719,7 +8707,7 @@ snapshots:
 
   v8-compile-cache-lib@3.0.1: {}
 
-  velite@0.1.0-rc.0:
+  velite@0.1.0-rc.3:
     dependencies:
       '@mdx-js/mdx': 3.0.1
       esbuild: 0.21.1
