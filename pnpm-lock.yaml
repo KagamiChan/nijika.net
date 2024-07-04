@@ -49,7 +49,7 @@ importers:
         version: 0.10.1(typescript@5.5.3)(zod@3.23.8)
       '@upstash/redis':
         specifier: ^1.30.0
-        version: 1.31.6
+        version: 1.32.0
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -1669,8 +1669,8 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@upstash/redis@1.31.6':
-    resolution: {integrity: sha512-7sDQQqvVnnV+2PUVGjocITa34CULGLoWhmfSY/LtpxNYv24EsgOk9VXhmGXIyzJBcXxB614wOF6ccEN0Lr7fqQ==}
+  '@upstash/redis@1.32.0':
+    resolution: {integrity: sha512-KBzCjOgF9mhNcV4HTz7U8g7QTdLVEKi1sSe/97u0E+HkzdPmDt3j9lIPIHEUJz6RrdVH6s4HW4JcPvMLC7w3ew==}
 
   '@vitest/expect@1.6.0':
     resolution: {integrity: sha512-ixEvFVQjycy/oNgHjqsL6AZCDduC+tflRluaHIzKIsdbzkLn2U/iBnVeJwB6HsIjQBdfMR8Z0tRxKUsvFJEeWQ==}
@@ -5717,7 +5717,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@upstash/redis@1.31.6':
+  '@upstash/redis@1.32.0':
     dependencies:
       crypto-js: 4.2.0
 
