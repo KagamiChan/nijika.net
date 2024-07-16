@@ -73,7 +73,7 @@ importers:
         version: 7.1.0
       minisearch:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.0.1
       nanoid:
         specifier: ^5.0.7
         version: 5.0.7
@@ -3129,8 +3129,8 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  minisearch@7.0.0:
-    resolution: {integrity: sha512-0OIJ3hUE+YBJNruDCqbTMFmk/IoB1CpZzuGfl11khFIel66ew9UoLF/+gfq3bdyrneqr3P7BTjFZApUbmk+9Dg==}
+  minisearch@7.0.1:
+    resolution: {integrity: sha512-xLeX/AwTJLzgBF2/bdUI7MEePwXtzaLExkRwu8YFGfLDwSe06KYkplqPodLANsqvfc5Ks/r5ItFUSjIp7+9xtw==}
 
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
@@ -7657,7 +7657,7 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  minisearch@7.0.0: {}
+  minisearch@7.0.1: {}
 
   mkdirp@0.5.6:
     dependencies:
