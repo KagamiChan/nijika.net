@@ -103,7 +103,7 @@ importers:
         version: 7.1.0
       rehype-expressive-code:
         specifier: ^0.35.2
-        version: 0.35.4
+        version: 0.35.6
       rehype-slug:
         specifier: ^6.0.0
         version: 6.0.0
@@ -565,11 +565,11 @@ packages:
   '@expressive-code/plugin-line-numbers@0.35.3':
     resolution: {integrity: sha512-VzEcJ6yPaix19x4Q9ih237AGPxZuN+tNUroA2AoXedJ+fQD+frdY83/xKafRrbTqd3PeTnJj9CgXCxmwkbHFkQ==}
 
-  '@expressive-code/plugin-shiki@0.35.4':
-    resolution: {integrity: sha512-cJn38L6dO8FvlN2/L1Pwfb6dK/EznvrjceGyjBclxXvNit0TsmInlpQQ2DonSRSFexZTt92kLYGbBTgIcRBMyw==}
+  '@expressive-code/plugin-shiki@0.35.6':
+    resolution: {integrity: sha512-xm+hzi9BsmhkDUGuyAWIydOAWer7Cs9cj8FM0t4HXaQ+qCubprT6wJZSKUxuvFJIUsIOqk1xXFaJzGJGnWtKMg==}
 
-  '@expressive-code/plugin-text-markers@0.35.4':
-    resolution: {integrity: sha512-n4bRnRfSOwP78Xaoza6yBfyrr4qOYmG5Iz9vpcwnhs/RDULundv2oNgPVbW9KUSvmlJKrLeJAIJE1MGEh2/PcQ==}
+  '@expressive-code/plugin-text-markers@0.35.6':
+    resolution: {integrity: sha512-/k9eWVZSCs+uEKHR++22Uu6eIbHWEciVHbIuD8frT8DlqTtHYaaiwHPncO6KFWnGDz5i/gL7oyl6XmOi/E6GVg==}
 
   '@floating-ui/core@1.6.2':
     resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
@@ -2311,8 +2311,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  expressive-code@0.35.4:
-    resolution: {integrity: sha512-ps7Ln7QdEUVo+97ipuV6IzfciOk/2+mZXNVlYX/UiCkUwv+pdL0+oe50+DIF/fhWlFYh4Sf8tCrwi1YASxsrsA==}
+  expressive-code@0.35.6:
+    resolution: {integrity: sha512-+mx+TPTbMqgo0mL92Xh9QgjW0kSQIsEivMgEcOnaqKqL7qCw8Vkqc5Rg/di7ZYw4aMUSr74VTc+w8GQWu05j1g==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -3609,8 +3609,8 @@ packages:
   rehype-autolink-headings@7.1.0:
     resolution: {integrity: sha512-rItO/pSdvnvsP4QRB1pmPiNHUskikqtPojZKJPPPAVx9Hj8i8TwMBhofrrAYRhYOOBZH9tgmG5lPqDLuIWPWmw==}
 
-  rehype-expressive-code@0.35.4:
-    resolution: {integrity: sha512-HHYBTmZY5HBAO+bSP3wcin9gRGPnIio8fsFNP08a0CqjULjQNKMbUnda9Qot2VEh3o/jZ/vbuwNOTl2G3yG+bA==}
+  rehype-expressive-code@0.35.6:
+    resolution: {integrity: sha512-pPdE+pRcRw01kxMOwHQjuRxgwlblZt5+wAc3w2aPGgmcnn57wYjn07iKO7zaznDxYVxMYVvYlnL+R3vWFQS4Gw==}
 
   rehype-slug@6.0.0:
     resolution: {integrity: sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==}
@@ -4546,12 +4546,12 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.35.3
 
-  '@expressive-code/plugin-shiki@0.35.4':
+  '@expressive-code/plugin-shiki@0.35.6':
     dependencies:
       '@expressive-code/core': 0.35.6
       shiki: 1.12.1
 
-  '@expressive-code/plugin-text-markers@0.35.4':
+  '@expressive-code/plugin-text-markers@0.35.6':
     dependencies:
       '@expressive-code/core': 0.35.6
 
@@ -6554,12 +6554,12 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  expressive-code@0.35.4:
+  expressive-code@0.35.6:
     dependencies:
       '@expressive-code/core': 0.35.6
       '@expressive-code/plugin-frames': 0.35.6
-      '@expressive-code/plugin-shiki': 0.35.4
-      '@expressive-code/plugin-text-markers': 0.35.4
+      '@expressive-code/plugin-shiki': 0.35.6
+      '@expressive-code/plugin-text-markers': 0.35.6
 
   extend-shallow@2.0.1:
     dependencies:
@@ -8138,9 +8138,9 @@ snapshots:
       unified: 11.0.4
       unist-util-visit: 5.0.0
 
-  rehype-expressive-code@0.35.4:
+  rehype-expressive-code@0.35.6:
     dependencies:
-      expressive-code: 0.35.4
+      expressive-code: 0.35.6
 
   rehype-slug@6.0.0:
     dependencies:
