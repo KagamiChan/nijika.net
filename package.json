@@ -14,7 +14,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
     "@expressive-code/plugin-frames": "^0.35.2",
-    "@expressive-code/plugin-line-numbers": "^0.35.2",
+    "@expressive-code/plugin-line-numbers": "^0.36.0",
     "@formkit/auto-animate": "^0.8.2",
     "@giscus/react": "^3.0.0",
     "@icons-pack/react-simple-icons": "^9.4.1",
