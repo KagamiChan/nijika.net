@@ -12,8 +12,8 @@ importers:
         specifier: ^1.2.2
         version: 1.3.0
       '@expressive-code/plugin-frames':
-        specifier: ^0.35.2
-        version: 0.35.6
+        specifier: ^0.36.0
+        version: 0.36.0
       '@expressive-code/plugin-line-numbers':
         specifier: ^0.36.0
         version: 0.36.0
@@ -561,6 +561,9 @@ packages:
 
   '@expressive-code/plugin-frames@0.35.6':
     resolution: {integrity: sha512-CqjSWjDJ3wabMJZfL9ZAzH5UAGKg7KWsf1TBzr4xvUbZvWoBtLA/TboBML0U1Ls8h/4TRCIvR4VEb8dv5+QG3w==}
+
+  '@expressive-code/plugin-frames@0.36.0':
+    resolution: {integrity: sha512-eS+h0jmo3xFUVthidzGoJzT7JeMenkwIEabZkNAJKRvNXTl5SkrRFJek9DiEbcOs5UGoSOiF9IvylYPljWT3Ow==}
 
   '@expressive-code/plugin-line-numbers@0.36.0':
     resolution: {integrity: sha512-pocU+FN/pStoj0A2G6WFp8KYPuuEQFw+N1Mw5Q++Lpr911qoWocDN/XErlaqonvuSTNjJxASbyW9RIDxbTDFow==}
@@ -4547,6 +4550,10 @@ snapshots:
   '@expressive-code/plugin-frames@0.35.6':
     dependencies:
       '@expressive-code/core': 0.35.6
+
+  '@expressive-code/plugin-frames@0.36.0':
+    dependencies:
+      '@expressive-code/core': 0.36.0
 
   '@expressive-code/plugin-line-numbers@0.36.0':
     dependencies:
