@@ -103,7 +103,7 @@ importers:
         version: 7.1.0
       rehype-expressive-code:
         specifier: ^0.36.0
-        version: 0.36.0
+        version: 0.36.1
       rehype-slug:
         specifier: ^6.0.0
         version: 6.0.0
@@ -556,17 +556,23 @@ packages:
   '@expressive-code/core@0.36.0':
     resolution: {integrity: sha512-MECsDMCD9lKxCnyX3z0foKftEKTTrvr0x4715+4UbXVU1SJ+h4eUWUNopy2xGlvCfZ1Zq/l5vkzXKvU9bRk9zg==}
 
+  '@expressive-code/core@0.36.1':
+    resolution: {integrity: sha512-9Y+vLlDEQeRQiPKTtab0NRmnUwS8GkJxobwvsXKoqWrRTWyVjV0VLI7BwXFUVVbbuuvMnwXpzfxY2mC64n3Jow==}
+
   '@expressive-code/plugin-frames@0.36.0':
     resolution: {integrity: sha512-eS+h0jmo3xFUVthidzGoJzT7JeMenkwIEabZkNAJKRvNXTl5SkrRFJek9DiEbcOs5UGoSOiF9IvylYPljWT3Ow==}
+
+  '@expressive-code/plugin-frames@0.36.1':
+    resolution: {integrity: sha512-HAWH5gcX7avdtKhwSp/RLtqqEq04/JFOIQ6enAClHY8Kbr3c5T+C0Ki6G/3IVKnIjy2y0U7E6b9dOqzKSsanxw==}
 
   '@expressive-code/plugin-line-numbers@0.36.0':
     resolution: {integrity: sha512-pocU+FN/pStoj0A2G6WFp8KYPuuEQFw+N1Mw5Q++Lpr911qoWocDN/XErlaqonvuSTNjJxASbyW9RIDxbTDFow==}
 
-  '@expressive-code/plugin-shiki@0.36.0':
-    resolution: {integrity: sha512-iekUabcP57Gjpx/Y5Gr8GfqRx4XszYIJWafSmbd8hUxd2p5/f0mKxwB7GNv6PbCsvW79wbbgnt4tfX/CsnP5og==}
+  '@expressive-code/plugin-shiki@0.36.1':
+    resolution: {integrity: sha512-nmzJ2TUHBDtYgOzDONTKt27n2B9S++hmvPxlPM1HZtjwO+2fhGGGW7M3VfO//6FIlcD4X36jy38DfPB4T9/m3Q==}
 
-  '@expressive-code/plugin-text-markers@0.36.0':
-    resolution: {integrity: sha512-R7FzCNp5w7qBjPtN6wR7E+ZLL23jnjBgiJPqeTAUPrRH2K+FVEES+a7RlDiApsq8pWKNGl+CfOOd+R1sRTXmIw==}
+  '@expressive-code/plugin-text-markers@0.36.1':
+    resolution: {integrity: sha512-CNxkTuXmQtRWMQZcRRsLEfZIYStMdRMPzbisNU2a/RTgovqDsOQiyh1abnewxz0y7VuXW330D+etcEHjFWXU/A==}
 
   '@floating-ui/core@1.6.2':
     resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
@@ -2311,8 +2317,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  expressive-code@0.36.0:
-    resolution: {integrity: sha512-HFpt12lYIlTGznMIW/71UN5Q3VOu+cgfa1Iz5pPJ6fQwXp8CermZdmaODKSIS2TzbOirllcStboefhrG47EN+A==}
+  expressive-code@0.36.1:
+    resolution: {integrity: sha512-/cEqiBUMJXe9PJ74MFupcChi1quO7+kqFcKiG/29yBZ6G09V4s6d3X53wIOBlNYmQI+5YLDPdyB/aDSTP+MxPA==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -2556,6 +2562,9 @@ packages:
 
   hast-util-to-html@9.0.1:
     resolution: {integrity: sha512-hZOofyZANbyWo+9RP75xIDV/gq+OUKx+T46IlwERnKmfpwp81XBFbT9mi26ws+SJchA4RVUQwIBJpqEOBhMzEQ==}
+
+  hast-util-to-html@9.0.2:
+    resolution: {integrity: sha512-RP5wNpj5nm1Z8cloDv4Sl4RS8jH5HYa0v93YB6Wb4poEzgMo/dAAL0KcT4974dCjcNG5pkLqTImeFHHCwwfY3g==}
 
   hast-util-to-jsx-runtime@2.3.0:
     resolution: {integrity: sha512-H/y0+IWPdsLLS738P8tDnrQ8Z+dj12zQQ6WC11TIM21C8WFVoIxcqWXf2H3hiTVZjF1AWqoimGwrTWecWrnmRQ==}
@@ -3619,8 +3628,8 @@ packages:
   rehype-autolink-headings@7.1.0:
     resolution: {integrity: sha512-rItO/pSdvnvsP4QRB1pmPiNHUskikqtPojZKJPPPAVx9Hj8i8TwMBhofrrAYRhYOOBZH9tgmG5lPqDLuIWPWmw==}
 
-  rehype-expressive-code@0.36.0:
-    resolution: {integrity: sha512-3ptpSp1Fc33ITuwv+5YWwcukynSjKnEgtqOJJFUg9l6wQ6DQxhQEQKD0Bggd6XkEzlyqYTLENcvczSngX2XZCA==}
+  rehype-expressive-code@0.36.1:
+    resolution: {integrity: sha512-q5TFftM8m64vYIou1tcJ2oHHDox2dWAa/x6uFw+v55xsyCNicJhVN86LHBnktTPxXvOuUA7ovk1GIG9sjLA6Aw==}
 
   rehype-slug@6.0.0:
     resolution: {integrity: sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==}
@@ -4542,22 +4551,38 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
+  '@expressive-code/core@0.36.1':
+    dependencies:
+      '@ctrl/tinycolor': 4.1.0
+      hast-util-select: 6.0.2
+      hast-util-to-html: 9.0.2
+      hast-util-to-text: 4.0.2
+      hastscript: 9.0.0
+      postcss: 8.4.41
+      postcss-nested: 6.2.0(postcss@8.4.41)
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
+
   '@expressive-code/plugin-frames@0.36.0':
     dependencies:
       '@expressive-code/core': 0.36.0
+
+  '@expressive-code/plugin-frames@0.36.1':
+    dependencies:
+      '@expressive-code/core': 0.36.1
 
   '@expressive-code/plugin-line-numbers@0.36.0':
     dependencies:
       '@expressive-code/core': 0.36.0
 
-  '@expressive-code/plugin-shiki@0.36.0':
+  '@expressive-code/plugin-shiki@0.36.1':
     dependencies:
-      '@expressive-code/core': 0.36.0
+      '@expressive-code/core': 0.36.1
       shiki: 1.14.1
 
-  '@expressive-code/plugin-text-markers@0.36.0':
+  '@expressive-code/plugin-text-markers@0.36.1':
     dependencies:
-      '@expressive-code/core': 0.36.0
+      '@expressive-code/core': 0.36.1
 
   '@floating-ui/core@1.6.2':
     dependencies:
@@ -6554,12 +6579,12 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  expressive-code@0.36.0:
+  expressive-code@0.36.1:
     dependencies:
-      '@expressive-code/core': 0.36.0
-      '@expressive-code/plugin-frames': 0.36.0
-      '@expressive-code/plugin-shiki': 0.36.0
-      '@expressive-code/plugin-text-markers': 0.36.0
+      '@expressive-code/core': 0.36.1
+      '@expressive-code/plugin-frames': 0.36.1
+      '@expressive-code/plugin-shiki': 0.36.1
+      '@expressive-code/plugin-text-markers': 0.36.1
 
   extend-shallow@2.0.1:
     dependencies:
@@ -6881,6 +6906,20 @@ snapshots:
       ccount: 2.0.1
       comma-separated-tokens: 2.0.3
       hast-util-raw: 9.0.4
+      hast-util-whitespace: 3.0.0
+      html-void-elements: 3.0.0
+      mdast-util-to-hast: 13.2.0
+      property-information: 6.5.0
+      space-separated-tokens: 2.0.2
+      stringify-entities: 4.0.4
+      zwitch: 2.0.4
+
+  hast-util-to-html@9.0.2:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/unist': 3.0.3
+      ccount: 2.0.1
+      comma-separated-tokens: 2.0.3
       hast-util-whitespace: 3.0.0
       html-void-elements: 3.0.0
       mdast-util-to-hast: 13.2.0
@@ -8143,9 +8182,9 @@ snapshots:
       unified: 11.0.4
       unist-util-visit: 5.0.0
 
-  rehype-expressive-code@0.36.0:
+  rehype-expressive-code@0.36.1:
     dependencies:
-      expressive-code: 0.36.0
+      expressive-code: 0.36.1
 
   rehype-slug@6.0.0:
     dependencies:
