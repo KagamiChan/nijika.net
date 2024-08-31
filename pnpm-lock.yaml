@@ -16,7 +16,7 @@ importers:
         version: 0.36.1
       '@expressive-code/plugin-line-numbers':
         specifier: ^0.36.0
-        version: 0.36.0
+        version: 0.36.1
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
@@ -562,8 +562,8 @@ packages:
   '@expressive-code/plugin-frames@0.36.1':
     resolution: {integrity: sha512-HAWH5gcX7avdtKhwSp/RLtqqEq04/JFOIQ6enAClHY8Kbr3c5T+C0Ki6G/3IVKnIjy2y0U7E6b9dOqzKSsanxw==}
 
-  '@expressive-code/plugin-line-numbers@0.36.0':
-    resolution: {integrity: sha512-pocU+FN/pStoj0A2G6WFp8KYPuuEQFw+N1Mw5Q++Lpr911qoWocDN/XErlaqonvuSTNjJxASbyW9RIDxbTDFow==}
+  '@expressive-code/plugin-line-numbers@0.36.1':
+    resolution: {integrity: sha512-UfXxOqSMbFQhWeclUInUvwVjatSeoJBP5W1R3gCx4aYTUB5zCDZScYAMsmG0WFe5Lz9OlCEdCicHOF3dbqXrLw==}
 
   '@expressive-code/plugin-shiki@0.36.1':
     resolution: {integrity: sha512-nmzJ2TUHBDtYgOzDONTKt27n2B9S++hmvPxlPM1HZtjwO+2fhGGGW7M3VfO//6FIlcD4X36jy38DfPB4T9/m3Q==}
@@ -4567,9 +4567,9 @@ snapshots:
     dependencies:
       '@expressive-code/core': 0.36.1
 
-  '@expressive-code/plugin-line-numbers@0.36.0':
+  '@expressive-code/plugin-line-numbers@0.36.1':
     dependencies:
-      '@expressive-code/core': 0.36.0
+      '@expressive-code/core': 0.36.1
 
   '@expressive-code/plugin-shiki@0.36.1':
     dependencies:
