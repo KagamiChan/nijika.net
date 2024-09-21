@@ -64,7 +64,7 @@ importers:
         version: 11.5.6(@emotion/is-prop-valid@1.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       holy-loader:
         specifier: ^2.3.1
-        version: 2.3.6(react@18.3.1)
+        version: 2.3.7(react@18.3.1)
       lucide-react:
         specifier: ^0.439.0
         version: 0.439.0(react@18.3.1)
@@ -2543,8 +2543,8 @@ packages:
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
-  holy-loader@2.3.6:
-    resolution: {integrity: sha512-fuXiUAna25ufzXNf3CQIUdydxB4dUOoGON7wPlnYok6jmTXwv0Rneh8D5mAKEqy20sqNogpKFPJ0NJzih1LKRg==}
+  holy-loader@2.3.7:
+    resolution: {integrity: sha512-REXJaGXQ+nZWlo+rixnL6UTIUdTyHxB91N+CTA/lX/p2SVL4v0Bva5alFNV70fqbGVthc9bubrIjREhry5+T9Q==}
     peerDependencies:
       react: '>= 16.0.0'
 
@@ -6797,7 +6797,7 @@ snapshots:
     dependencies:
       react-is: 16.13.1
 
-  holy-loader@2.3.6(react@18.3.1):
+  holy-loader@2.3.7(react@18.3.1):
     dependencies:
       react: 18.3.1
 
