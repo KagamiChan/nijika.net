@@ -25,7 +25,7 @@ importers:
         version: 3.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@icons-pack/react-simple-icons':
         specifier: ^10.0.0
-        version: 10.0.0(react@18.3.1)
+        version: 10.1.0(react@18.3.1)
       '@radix-ui/react-avatar':
         specifier: ^1.0.4
         version: 1.1.1(@types/react-dom@18.3.1)(@types/react@18.3.11)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -601,8 +601,8 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
-  '@icons-pack/react-simple-icons@10.0.0':
-    resolution: {integrity: sha512-oU0PVDx9sbNQjRxJN555dsHbRApYN+aBq/O9+wo3JgNkEfvBMgAEtsSGtXWWXQsLAxJcYiFOCzBWege/Xj/JFQ==}
+  '@icons-pack/react-simple-icons@10.1.0':
+    resolution: {integrity: sha512-sZ2oDkYaVAci7GuNL8okERJn4Ej0INbeCwtIDVuwWfO5zILW7j5frvKQbozTB+fLtZqEwAP9KkNp7oR8WeHaIg==}
     peerDependencies:
       react: ^16.13 || ^17 || ^18
 
@@ -4553,7 +4553,7 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
-  '@icons-pack/react-simple-icons@10.0.0(react@18.3.1)':
+  '@icons-pack/react-simple-icons@10.1.0(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
