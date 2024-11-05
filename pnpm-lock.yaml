@@ -16,7 +16,7 @@ importers:
         version: 0.38.1
       '@expressive-code/plugin-line-numbers':
         specifier: ^0.38.0
-        version: 0.38.1
+        version: 0.38.2
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
@@ -558,11 +558,14 @@ packages:
   '@expressive-code/core@0.38.1':
     resolution: {integrity: sha512-0wlYtJKVcuhm6/QkvPGh89SOZxPQl81U0E1DFmBKhe/up/vB20X/JADgXqRLLcb6CvVYjysCxmJbR0ZnNOccyg==}
 
+  '@expressive-code/core@0.38.2':
+    resolution: {integrity: sha512-kggEFS1hG7iSO95sd4be2zdScjYYZNUatGsCW0ADRnYA9VkXW4tENtQzLAKhK7yQgXtHMRFVv9sVax25lOfPkQ==}
+
   '@expressive-code/plugin-frames@0.38.1':
     resolution: {integrity: sha512-k0Gi7netbvCGZe6qKICX+KGc61O7jK0TJcxfNNCBy4Y5seDJxV8QXS1OEjy7pNg3KXd4dL98KIiJulO5yJSMVQ==}
 
-  '@expressive-code/plugin-line-numbers@0.38.1':
-    resolution: {integrity: sha512-2aePvlqD+L+eUDC3N4oP8N3yLKjRcbGV+QA57rm2vEjylJIKIXqM3kmQOn1iCLIHckiMm0Ev3ukt3cBZRxgVEA==}
+  '@expressive-code/plugin-line-numbers@0.38.2':
+    resolution: {integrity: sha512-SV8mQqKaCEJOlqJEVSMmFqGEwAa1CsdE0yP5vblQG462qmvElboy0mQqbDP7nHa77RqxorA8jgrSnednUMusbg==}
 
   '@expressive-code/plugin-shiki@0.38.1':
     resolution: {integrity: sha512-ZQWylPr53+neQqOM7lFqPOWAsN6i7VPhowEX05i2aTAa43hdJKLyuN78i5R+gkTArP0O33s0qXqQDYVc/JbvIA==}
@@ -4530,22 +4533,34 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
+  '@expressive-code/core@0.38.2':
+    dependencies:
+      '@ctrl/tinycolor': 4.1.0
+      hast-util-select: 6.0.3
+      hast-util-to-html: 9.0.3
+      hast-util-to-text: 4.0.2
+      hastscript: 9.0.0
+      postcss: 8.4.47
+      postcss-nested: 6.2.0(postcss@8.4.47)
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
+
   '@expressive-code/plugin-frames@0.38.1':
     dependencies:
       '@expressive-code/core': 0.38.1
 
-  '@expressive-code/plugin-line-numbers@0.38.1':
+  '@expressive-code/plugin-line-numbers@0.38.2':
     dependencies:
-      '@expressive-code/core': 0.38.1
+      '@expressive-code/core': 0.38.2
 
   '@expressive-code/plugin-shiki@0.38.1':
     dependencies:
-      '@expressive-code/core': 0.38.1
+      '@expressive-code/core': 0.38.2
       shiki: 1.22.2
 
   '@expressive-code/plugin-text-markers@0.38.1':
     dependencies:
-      '@expressive-code/core': 0.38.1
+      '@expressive-code/core': 0.38.2
 
   '@floating-ui/core@1.6.8':
     dependencies:
@@ -6517,7 +6532,7 @@ snapshots:
 
   expressive-code@0.38.1:
     dependencies:
-      '@expressive-code/core': 0.38.1
+      '@expressive-code/core': 0.38.2
       '@expressive-code/plugin-frames': 0.38.1
       '@expressive-code/plugin-shiki': 0.38.1
       '@expressive-code/plugin-text-markers': 0.38.1
