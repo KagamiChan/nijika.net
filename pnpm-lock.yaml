@@ -15,8 +15,8 @@ importers:
         specifier: ^0.38.0
         version: 0.38.1
       '@expressive-code/plugin-line-numbers':
-        specifier: ^0.38.0
-        version: 0.38.1
+        specifier: ^0.42.0
+        version: 0.42.0
       '@formkit/auto-animate':
         specifier: ^0.8.2
         version: 0.8.2
@@ -564,11 +564,14 @@ packages:
   '@expressive-code/core@0.38.1':
     resolution: {integrity: sha512-0wlYtJKVcuhm6/QkvPGh89SOZxPQl81U0E1DFmBKhe/up/vB20X/JADgXqRLLcb6CvVYjysCxmJbR0ZnNOccyg==}
 
+  '@expressive-code/core@0.42.0':
+    resolution: {integrity: sha512-MN11+9nfmaC7sYu2BZJXAXqwkBRt8t1xTSqP+Ti1NfTEskgl6xUnzDxoaiQkg0BMzpglA0pys4dpDKquP/cyIw==}
+
   '@expressive-code/plugin-frames@0.38.1':
     resolution: {integrity: sha512-k0Gi7netbvCGZe6qKICX+KGc61O7jK0TJcxfNNCBy4Y5seDJxV8QXS1OEjy7pNg3KXd4dL98KIiJulO5yJSMVQ==}
 
-  '@expressive-code/plugin-line-numbers@0.38.1':
-    resolution: {integrity: sha512-2aePvlqD+L+eUDC3N4oP8N3yLKjRcbGV+QA57rm2vEjylJIKIXqM3kmQOn1iCLIHckiMm0Ev3ukt3cBZRxgVEA==}
+  '@expressive-code/plugin-line-numbers@0.42.0':
+    resolution: {integrity: sha512-xY0s/b8UTF8fGrHWbJ8uX95yCDU1NpepXOTtcLBJobQV08RA7G+hzxL0BtDRso7RK4bCrJHio+BgYzI/M21BBA==}
 
   '@expressive-code/plugin-shiki@0.38.1':
     resolution: {integrity: sha512-ZQWylPr53+neQqOM7lFqPOWAsN6i7VPhowEX05i2aTAa43hdJKLyuN78i5R+gkTArP0O33s0qXqQDYVc/JbvIA==}
@@ -4682,13 +4685,25 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
+  '@expressive-code/core@0.42.0':
+    dependencies:
+      '@ctrl/tinycolor': 4.1.0
+      hast-util-select: 6.0.3
+      hast-util-to-html: 9.0.3
+      hast-util-to-text: 4.0.2
+      hastscript: 9.0.0
+      postcss: 8.5.10
+      postcss-nested: 6.2.0(postcss@8.5.10)
+      unist-util-visit: 5.0.0
+      unist-util-visit-parents: 6.0.1
+
   '@expressive-code/plugin-frames@0.38.1':
     dependencies:
       '@expressive-code/core': 0.38.1
 
-  '@expressive-code/plugin-line-numbers@0.38.1':
+  '@expressive-code/plugin-line-numbers@0.42.0':
     dependencies:
-      '@expressive-code/core': 0.38.1
+      '@expressive-code/core': 0.42.0
 
   '@expressive-code/plugin-shiki@0.38.1':
     dependencies:
